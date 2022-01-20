@@ -7,7 +7,7 @@
         <div class="container-fluid">
             <div id="carouselExampleControls" class="carousel slide carousel-customers" data-bs-ride="carousel">
                 <div class="carousel-inner">
-                    @foreach ($data as $row)
+                    @foreach ($mainSlider as $row)
                         <div class="carousel-item @if ($loop->first) active @endif">
                             <img class="d-block w-100" src="{{ $row->image_url }}" alt=" Slide {{ $loop->index }}">
                         </div>
@@ -173,6 +173,21 @@
             <div id="carouselExampleCaptions" class="carousel slide carousel-testimonial" data-bs-ride="carousel"
                 data-bs-pause="false">
                 <div class="carousel-inner">
+                    @foreach ($userReviews as $review)
+                        <div class="carousel-item @if ($loop->first) active @endif">
+                            <div class="testimonial-comment">
+                                {{ $review->comment }}
+                            </div>
+
+                            @for ($i = 1; $i <= 5; $i++)
+                                @if ($review->rating >= $i)
+                                    <i class="fas fa-star testimonial-star"></i>
+                                @else
+                                    <i class="far fa-star testimonial-star"></i>
+                                @endif
+                            @endfor
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>

@@ -5,12 +5,15 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\MainSlider;
+use App\Models\UserReview;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        $data = MainSlider::all();
-        return view('pages.home', compact('data'));
+        $mainSlider = MainSlider::all();
+        $userReviews = UserReview::all();
+
+        return view('pages.home', compact(['mainSlider', 'userReviews']));
     }
 }
