@@ -15,6 +15,11 @@ mix.js('resources/js/app.js', 'public/js')
     .js('resources/js/about_us.js', 'public/js')
     .js('resources/js/contact.js', 'public/js')
     .js('resources/js/my_order.js', 'public/js')
+    .js('resources/js/bootstrap-input-spinner.js', 'public/js')
+    .js('resources/js/jquery.toast.min.js', 'public/js')
     .postCss('resources/css/app.css', 'public/css', [
+        //
+    ])
+    .postCss('resources/css/jquery.toast.min.css', 'public/css', [
         //
     ]);

@@ -43,5 +43,5 @@
 @endsection
 @section('scripts')
     <script src="{{ mix('js/my_order.js') }}"></script>
-    <script src="js/toast/jquery.toast.min.js"></script>
+    <script src="{{ mix('js/jquery.toast.min.js') }}"></script>
 @endsection
