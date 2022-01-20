@@ -2,24 +2,29 @@
 @section('content')
     <!-- Carousel Section -->
     <div class="carousel-container">
-        <h1 id="carousel-title" class="heading-text">{!! __('carousel_section_title') !!}
+        <h1 id="carousel-title" class="heading-text">{!! __('carousel_section_title') !!}</h1>
 
-            <div class="container-fluid">
-                <div id="carouselExampleControls" class="carousel slide carousel-customers" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
+        <div class="container-fluid">
+            <div id="carouselExampleControls" class="carousel slide carousel-customers" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    @foreach ($data as $row)
+                        <div class="carousel-item @if ($loop->first) active @endif">
+                            <img class="d-block w-100" src="{{ $row->image_url }}" alt=" Slide {{ $loop->index }}">
+                        </div>
+                    @endforeach
                 </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
+        </div>
     </div>
 
     <!-- Booking Section -->
@@ -32,35 +37,43 @@
                     <div id="booking-col-1" class="col-md-4 booking">
                         <select class="form-control form-control-lg booking-icn direction" name="booking-transfer-direction"
                             id="booking-select-transfer-direction" required>
-                            <option id="booking-col1-option1" value="" disabled selected>{{ __('booking_section_col1') }}
+                            <option id="booking-col1-option1" value="" disabled selected>
+                                {{ __('booking_section_col1') }}
                             </option>
-                            <option id="booking-col1-option2" value="1">{{ __('booking_section_col1_option1') }}</option>
-                            <option id="booking-col1-option3" value="2">{{ __('booking_section_col1_option2') }}</option>
-                            <option id="booking-col1-option4" value="3">{{ __('booking_section_col1_option3') }}</option>
+                            <option id="booking-col1-option2" value="1">
+                                {{ __('booking_section_col1_option1') }}</option>
+                            <option id="booking-col1-option3" value="2">
+                                {{ __('booking_section_col1_option2') }}</option>
+                            <option id="booking-col1-option4" value="3">
+                                {{ __('booking_section_col1_option3') }}</option>
                         </select>
                     </div>
                     <div id="booking-col-2" class="col-md-4 booking">
                         <input type="hidden" id="airport-name" name="airport-name" value="">
                         <select class="form-control form-control-lg booking-icn airport" name="booking-airport"
                             id="booking-select-airport-col2">
-                            <option id="booking-col2-option1" value="" disabled selected>{{ __('booking_section_col2') }}
+                            <option id="booking-col2-option1" value="" disabled selected>
+                                {{ __('booking_section_col2') }}
                             </option>
                         </select>
                         <select class="form-control form-control-lg booking-icn transfer-point"
                             name="booking-transfer-point" id="booking-select-transfer-point-col2">
-                            <option value="" disabled selected>{{ __('booking_section_col3') }}</option>
+                            <option value="" disabled selected>{{ __('booking_section_col3') }}
+                            </option>
                         </select>
                     </div>
                     <div id="booking-col-3" class="col-md-4 booking">
                         <input type="hidden" id="transfer-point-name" name="transfer-point-name" value="">
                         <select class="form-control form-control-lg booking-icn transfer-point"
                             name="booking-transfer-point" id="booking-select-transfer-point-col3">
-                            <option id="booking-col3-option1" value="" disabled selected>{{ __('booking_section_col3') }}
+                            <option id="booking-col3-option1" value="" disabled selected>
+                                {{ __('booking_section_col3') }}
                             </option>
                         </select>
                         <select class="form-control form-control-lg booking-icn airport" name="booking-airport"
                             id="booking-select-airport-col3">
-                            <option value="" disabled selected>{{ __('booking_section_col2') }}</option>
+                            <option value="" disabled selected>{{ __('booking_section_col2') }}
+                            </option>
                         </select>
                     </div>
                     <div id="booking-col-4" class="col-md-4 booking">
@@ -131,7 +144,8 @@
                     <div id="booking-col-5" class="col-md-4 booking">
                         <select class="form-control form-control-lg booking-icn baby-seat" name="passenger-baby-seat"
                             id="passenger-select-baby-seat" required>
-                            <option id="booking-col5-option1" value="" disabled selected>{{ __('booking_section_col5') }}
+                            <option id="booking-col5-option1" value="" disabled selected>
+                                {{ __('booking_section_col5') }}
                             </option>
                             @for ($i = 0; $i <= 10; $i++)
                                 <option value="{{ $i }}">{{ $i }}</option>
