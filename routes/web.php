@@ -18,10 +18,10 @@ use App\Http\Controllers\Contact;
 |
 */
 
-Route::get('/', [Home::class, 'index']);
+Route::get('/', [Home::class, 'index'])->name('home');
 
-Route::get('/aboutus', [AboutUs::class, 'index']);
+Route::get('/aboutus', [AboutUs::class, 'index'])->name('aboutus');
 
-Route::get('/myorder', [MyOrder::class, 'index']);
+Route::get('/myorder', [MyOrder::class, 'index'])->name('myorder');
 
-Route::get('/contact', [Contact::class, 'index']);
+Route::get('/contact', [Contact::class, 'index'])->name('contact');
