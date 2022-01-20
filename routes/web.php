@@ -2,10 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\Home;
-use App\Http\Controllers\AboutUs;
-use App\Http\Controllers\MyOrder;
-use App\Http\Controllers\Contact;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AboutUsController;
+use App\Http\Controllers\MyOrderController;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,10 +18,10 @@ use App\Http\Controllers\Contact;
 |
 */
 
-Route::get('/', [Home::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/aboutus', [AboutUs::class, 'index'])->name('aboutus');
+Route::get('/aboutus', [AboutUsController::class, 'index'])->name('aboutus');
 
-Route::get('/myorder', [MyOrder::class, 'index'])->name('myorder');
+Route::get('/myorder', [MyOrderController::class, 'index'])->name('myorder');
 
-Route::get('/contact', [Contact::class, 'index'])->name('contact');
+Route::get('/contact', [ContactController::class, 'index'])->name('contact');
