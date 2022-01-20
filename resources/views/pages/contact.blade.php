@@ -32,33 +32,33 @@
     <!-- Page Header Section -->
     <div class="page-header about-us">
         <div id="contact-page-title" class="page-title">
-            İLETİŞİM
+            {{ __('contact_page_title') }}
         </div>
     </div>
 
     <div id="contact-info-section" class="container-fluid contact-section">
         <div id="contact-section-title" class="contact-title">
-            İLETİŞİM BİLGİLERİ
+            {{ __('contact_section_title') }}
         </div>
         <div class="row">
             <div class="col-md-6 contact-box">
                 <span class="contact-box-icon icon-company"></span>
-                <div id="contact-box-title1" class="contact-box-title"><em>Şirket Adı:</em></div>
-                <div class="contact-box-desc">Vip Ausfluege Transfer Turizm Ticaret Pazarlama Limited Şirket</div>
+                <div id="contact-box-title1" class="contact-box-title">{!! __('contact_box_title1') !!}</div>
+                <div class="contact-box-desc">Vip Transfer Vip Ausfluege</div>
             </div>
             <div class="col-md-6 contact-box">
                 <span class="contact-box-icon icon-email"></span>
-                <div id="contact-box-title2" class="contact-box-title"><em>E-Mail:</em></div>
+                <div id="contact-box-title2" class="contact-box-title">{!! __('contact_box_title2') !!}</div>
                 <div class="contact-box-desc">info@viptransfervipausfluege.com</div>
             </div>
             <div class="col-md-6 contact-box">
                 <span class="contact-box-icon icon-address"></span>
-                <div id="contact-box-title3" class="contact-box-title"><em>Adres:</em></div>
+                <div id="contact-box-title3" class="contact-box-title">{!! __('contact_box_title3') !!}</div>
                 <div class="contact-box-desc">Kemerağzı Mah. Yaşar Sabutay Blv. Karnas iş Mrk. No: 14/13 Aksu/ Antalya</div>
             </div>
             <div class="col-md-6 contact-box">
                 <span class="contact-box-icon icon-call-center"></span>
-                <div id="contact-box-title4" class="contact-box-title"><em>Çağrı Merkezi:</em></div>
+                <div id="contact-box-title4" class="contact-box-title">{!! __('contact_box_title4') !!}</div>
                 <div class="contact-box-desc">+90 544 170 07 38</div>
             </div>
         </div>
@@ -67,17 +67,19 @@
     <!--The div element for the map -->
     <div class="contact-map-container">
         <form action="#" id="contact-form" class="contact-map-form">
-            <h2 id="contact-form-title" class="map-form-title">İLETİŞİM FORMU</h2>
+            @csrf
+            <h2 id="contact-form-title" class="map-form-title">{{ __('contact_form_title') }}</h2>
             <input type="name" class="form-control map-form-input" id="contact-form-name" name="name"
-                placeholder="Adınız Soyadınız" required>
+                placeholder="{{ __('contact_form_name') }}" required>
             <input type="email" class="form-control map-form-input" id="contact-form-email" name="email"
-                placeholder="E-Mail" required>
+                placeholder="{{ __('contact_form_email') }}" required>
             <input type="tel" class="form-control map-form-input" id="contact-form-phone" name="phone"
-                placeholder="Telefon No." required>
+                placeholder="{{ __('contact_form_phone') }}" required>
             <textarea type="text" class="form-control map-form-input" id="contact-form-message" name="message"
-                placeholder="Mesajınız" required></textarea>
+                placeholder="{{ __('contact_form_message') }}" required></textarea>
             <div class="d-grid gap-2">
-                <button id="contact-form-submit" type="submit" class="btn btn-dark btn-lg">GÖNDER</button>
+                <button id="contact-form-submit" type="submit"
+                    class="btn btn-dark btn-lg">{{ __('contact_form_submit') }}</button>
             </div>
         </form>
         <div id="contact-map"></div>

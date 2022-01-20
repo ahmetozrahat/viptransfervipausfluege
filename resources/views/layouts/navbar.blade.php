@@ -9,23 +9,25 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a id="nav-link-home" class="nav-link active" aria-current="page" href="{{ route('home') }}">Ana
-                        Sayfa</a>
+                    <a id="nav-link-home" class="nav-link active" aria-current="page"
+                        href="{{ route('home') }}">{{ __('navbar_home') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a id="nav-link-aboutus" class="nav-link" href="{{ route('aboutus') }}">Hakkımızda</a>
+                    <a id="nav-link-aboutus" class="nav-link"
+                        href="{{ route('aboutus') }}">{{ __('navbar_aboutus') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a id="nav-link-orders" class="nav-link" href="{{ route('myorder') }}">Transfer
-                        Siparişim</a>
+                    <a id="nav-link-orders" class="nav-link"
+                        href="{{ route('myorder') }}">{{ __('navbar_orders') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a id="nav-link-contact" class="nav-link" href="{{ route('contact') }}">İletişim</a>
+                    <a id="nav-link-contact" class="nav-link"
+                        href="{{ route('contact') }}">{{ __('navbar_contact') }}</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a id="nav-link-locale" class="nav-link dropdown-toggle" href="#" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                        Dil
+                        {{ __('navbar_locale') }}
                     </a>
                     <ul class="dropdown-menu" id="navbarDropdownLocale" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="#">Türkçe</a></li>
@@ -38,7 +40,7 @@
                 <li class="nav-item dropdown">
                     <a id="nav-link-currency" class="nav-link dropdown-toggle" href="#" id="navbarDropdownCurrency"
                         role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Para Birimi
+                        {{ __('navbar_currency') }}
                     </a>
                     <ul class="dropdown-menu" id="navbarDropdownCurrency" aria-labelledby="navbarDropdown">
                         <li><a id="currency_tl" class="dropdown-item" href="#">₺ TRY</a></li>
