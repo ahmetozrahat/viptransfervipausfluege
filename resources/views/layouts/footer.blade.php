@@ -17,11 +17,11 @@
                             <ul>
                                 <li>
                                     <a id="footer-section-link1" class="footer-list-item"
-                                        href="{{ route('home') }}">{{ __('footer_section_link1') }}</a>
+                                        href="{{ route('home', app()->getLocale()) }}">{{ __('footer_section_link1') }}</a>
                                 </li>
                                 <li>
                                     <a id="footer-section-link2" class="footer-list-item"
-                                        href="{{ route('aboutus') }}">{{ __('footer_section_link2') }}</a>
+                                        href="{{ route('aboutus', app()->getLocale()) }}">{{ __('footer_section_link2') }}</a>
                                 </li>
                                 <li>
                                     <a id="footer-section-link3" class="footer-list-item"
@@ -29,11 +29,11 @@
                                 </li>
                                 <li>
                                     <a id="footer-section-link4" class="footer-list-item"
-                                        href="{{ route('myorder') }}">{{ __('footer_section_link4') }}</a>
+                                        href="{{ route('myorder', app()->getLocale()) }}">{{ __('footer_section_link4') }}</a>
                                 </li>
                                 <li>
                                     <a id="footer-section-link5" class="footer-list-item"
-                                        href="{{ route('contact') }}">{{ __('footer_section_link5') }}</a>
+                                        href="{{ route('contact', app()->getLocale()) }}">{{ __('footer_section_link5') }}</a>
                                 </li>
                                 <li>
                                     <a id="footer-section-link6" class="footer-list-item"

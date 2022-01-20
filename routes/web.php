@@ -18,10 +18,14 @@ use App\Http\Controllers\ContactController;
 |
 */
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::redirect('/', '/de');
 
-Route::get('/aboutus', [AboutUsController::class, 'index'])->name('aboutus');
+Route::group(['prefix' => '{language}'], function () {
+    Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/myorder', [MyOrderController::class, 'index'])->name('myorder');
+    Route::get('/aboutus', [AboutUsController::class, 'index'])->name('aboutus');
 
-Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+    Route::get('/myorder', [MyOrderController::class, 'index'])->name('myorder');
+
+    Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+});
