@@ -23,5 +23,5 @@
     </div>
 @endsection
 @section('scripts')
-    <script src="js/aboutus1.0.5.js"> </script>
+    <script src="{{ mix('js/about_us.js') }}"></script>
 @endsection

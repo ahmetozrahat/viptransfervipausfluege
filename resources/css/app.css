@@ -1,0 +1,1160 @@
+body {
+    font-family: "Oswald", sans-serif;
+    text-align: center;
+  }
+  
+  strong {
+    font-weight: 700;
+  }
+  
+  sup {
+    font-weight: normal;
+    font-size: 0.9rem;
+  }
+  
+  .noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                      supported by Chrome, Edge, Opera and Firefox */
+  }
+  
+  /* Navigation Bar Section */
+  
+  .navbar {
+    background-color: white !important;
+  }
+  
+  .nav-container {
+    padding: 10px 20px;
+  }
+  
+  .nav-link {
+    font-size: 1.1rem;
+    color: #333 !important;
+  }
+  
+  .nav-link:hover {
+    color: #78c4d4 !important;
+  }
+  
+  .active {
+    color: #78c4d4 !important;
+  }
+  
+  .dropdown-menu {
+    left: inherit !important;
+    right: 0px;
+  }
+  
+  /* Carousel Section */
+  
+  .carousel-container {
+    background-color: #78c4d4;
+    height: 500px;
+  }
+  
+  .heading-text {
+    font-size: 25px;
+    font-weight: 300;
+    color: white;
+    padding: 50px;
+  }
+  
+  .heading-text.dark {
+    color: #333;
+  }
+  
+  .carousel-customers,
+  .carousel-customers img {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .carousel-customers img {
+    height: 300px !important;
+  }
+  
+  @media only screen and (min-width: 960px) {
+    .carousel-customers,
+    .carousel-customers img {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+  
+    .carousel-customers img {
+      height: 480px !important;
+    }
+  
+    .carousel-container {
+      background-color: #78c4d4;
+      height: 680px;
+    }
+  }
+  
+  /* Booking Section */
+  
+  .booking-section {
+    background-color: #78c4d4;
+    padding: 60px 10%;
+  }
+  
+  .booking-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    padding: 0 0 30px 0;
+  }
+  
+  .booking {
+    padding: 5px 5px;
+  }
+  
+  .booking-icn {
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 200;
+    font-size: 1.1rem;
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-color: white;
+  }
+  
+  .booking-icn.direction {
+    background-image: url(/img/icon_01.png);
+  }
+  
+  .booking-icn.airport {
+    background-image: url(/img/icon_02.png);
+  }
+  
+  .booking-icn.transfer-point {
+    background-image: url(/img/icon_03.png);
+  }
+  
+  .booking-icn.passengers {
+    background-image: url(/img/icon_04.png);
+  }
+  
+  .booking-icn.baby-seat {
+    background-image: url(/img/icon_05.png);
+  }
+  
+  .passenger-dropdown {
+    width: 100%;
+    padding: 10px 25px;
+    display: block;
+    background-color: white;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 0 0 8px 8px;
+  }
+  
+  .passenger-label {
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  
+  .input-group {
+    padding: 12px 0;
+  }
+  
+  .btn-primary.stepper-btn,
+  .btn-primary.stepper-btn:active,
+  .btn-primary.stepper-btn:visited {
+    background-color: #78c4d4 !important;
+    border-color: #78c4d4 !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+  
+  .btn-primary.stepper-btn:hover {
+    background-color: #609daa !important;
+    border-color: #609daa !important;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .booking-section {
+      padding: 30px 7%;
+    }
+  }
+  
+  @media only screen and (min-width: 1024px) {
+    .booking-section {
+      padding: 30px 10%;
+    }
+  }
+  
+  @media only screen and (min-width: 1200px) {
+    .booking-section {
+      padding: 30px 20%;
+    }
+  }
+  
+  /* Popular Transfers Section */
+  
+  .popular-section {
+    background-color: white;
+    padding: 0 7% 7%;
+  }
+  
+  .no-bottom-padding {
+    padding-bottom: 0 !important;
+  }
+  
+  @media only screen and (min-width: 1280px) {
+    .popular-section {
+      padding: 0 20% 7%;
+    }
+  }
+  
+  .card {
+    margin: 0 0 15px 0;
+    border: none;
+    color: #575757;
+    -webkit-box-shadow: -1px 5px 25px 3px rgba(0, 0, 0, 0.22);
+    box-shadow: -1px 5px 25px 3px rgba(0, 0, 0, 0.22);
+  }
+  
+  .transfer-icn {
+    color: #78c4d4;
+    font-size: 2rem;
+  }
+  
+  .card-transfer-from {
+    font-weight: bold;
+    margin: 10px 0 0;
+  }
+  
+  .card-transfer-to {
+    font-weight: 300;
+    margin: 0;
+  }
+  
+  .tl {
+    font-weight: normal;
+  }
+  
+  .card-transfer-price {
+    font-size: 2.5rem;
+    font-weight: 200;
+  }
+  
+  .transfer-btn {
+    margin: 10px;
+  }
+  
+  .btn-primary.transfer-btn,
+  .btn-primary.transfer-btn:active,
+  .btn-primary.transfer-btn:visited {
+    background-color: #78c4d4 !important;
+    border-color: #78c4d4 !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+  
+  .btn-primary.transfer-btn:hover {
+    background-color: #609daa !important;
+    border-color: #609daa !important;
+  }
+  
+  /* Testimonials Section */
+  
+  .testimonial-container {
+      margin: 100px 0;
+  }
+  
+  /*
+  
+  Background image and tint deleted. 21/11/2021
+  
+  .testimonial-container {
+    background-image: url(https://www.vipflughafentransfer.com/images/yorumbg.jpg);
+    background-size: cover;
+  }
+  
+  .testimonial-tint {
+    background-color: rgba(120, 196, 212, 0.9);
+    width: 100%;
+    height: 100%;
+    padding: 3% 0;
+  }
+  */
+  
+  .testimonial-header {
+      color: #333;
+  }
+  
+  .carousel-testimonial {
+    height: 60%;
+    text-align: center;
+  }
+  
+  .testimonial-comment {
+    font-size: 2rem;
+    font-weight: 200;
+    color: #333;
+    padding: 3% 7%;
+  }
+  
+  .testimonial-star {
+    color: #333;
+    font-size: 2.2rem;
+    padding: 15px 3px;
+  }
+  
+  .testimonial-customer {
+    color: #333;
+  }
+  
+  /* Info Section */
+  
+  .info-section {
+    padding: 120px 15%;
+    text-align: left;
+  }
+  
+  .info-image {
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .info-text {
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 300;
+    font-size: 1.3rem;
+  }
+  
+  .heading-text.info {
+    padding: 15px 0;
+  }
+  
+  .btn-info {
+    margin: 5% 0;
+    color: white !important;
+  }
+  
+  .btn-primary.btn-info,
+  .btn-primary.btn-info:active,
+  .btn-primary.btn-info:visited {
+    background-color: #78c4d4 !important;
+    border-color: #78c4d4 !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+  
+  .btn-primary.btn-info:hover {
+    background-color: #609daa !important;
+    border-color: #609daa !important;
+  }
+  
+  @media only screen and (max-width: 1024px) {
+    .info-section {
+      text-align: center;
+    }
+  
+    .heading-text.info {
+      padding: 50px 0;
+    }
+  }
+  
+  /* Why Us Container */
+  
+  .why-us-container {
+    background-image: url(https://www.vipflughafentransfer.com/images/nedenbiz.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 275px;
+  }
+  
+  .why-us-title {
+    font-size: 2.4rem;
+    color: white;
+    text-align: left;
+    position: relative;
+    left: 50px;
+    padding-top: 75px;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Footer Section */
+  
+  .footer-container {
+    font-family: "Source Sans Pro", sans-serif;
+    text-align: left;
+    padding-top: 75px;
+    background-color: #f2f2f2;
+  }
+  
+  .footer-section.title {
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #575757;
+  }
+  
+  .footer-section.desc {
+    font-weight: 300;
+  }
+  
+  .footer-icn {
+    font-size: 1.2rem;
+    text-decoration: none;
+    padding: 15px 15px 15px 0;
+    color: #575757;
+  }
+  
+  .footer-icn-small {
+    color: #666;
+    padding: 0 10px 0 0;
+  }
+  
+  .footer-icn:hover {
+    color: #78c4d4;
+    transition: 0.5s;
+  }
+  
+  .footer-list-item {
+    font-weight: 300;
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .footer-list-item:hover {
+    color: #78c4d4;
+    transition: 0.5s;
+  }
+  
+  .footer-col {
+    padding: 0 3%;
+    word-wrap: break-word;
+  }
+  
+  .footer-block {
+    padding: 15px 0;
+  }
+  
+  .footer-block ul {
+    list-style: none; /* Remove default bullets */
+    margin: 0;
+    padding: 0 0 0 8px;
+  }
+  
+  .footer-block ul li::before {
+    content: "▸";
+    color: gray;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+  }
+  
+  .footer-contact-item {
+    padding: 3% 0;
+  }
+  
+  .footer-banner {
+    font-size: small;
+    font-weight: 200;
+    background-color: #78c4d4;
+    padding: 5px 50px;
+    height: 30px;
+  }
+  
+  .footer-banner-company {
+    float: left;
+    display: block;
+  }
+  
+  .footer-banner-copyright {
+    float: right;
+    display: block;
+  }
+  
+  .footer-company-url {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .footer-company-url:hover {
+    color: #000;
+    transition: 0.5s;
+  }
+  
+  .toast {
+    font-family: "Source Sans Pro";
+    text-align: left;
+  }
+  
+  .toast-icn-success {
+    padding: 0 8px 0 0;
+    color: #25d366;
+  }
+  
+  .toast-icn-failure {
+    padding: 0 8px 0 0;
+    color: red;
+  }
+  
+  @media only screen and (max-width: 960px) {
+    .footer-banner {
+      font-size: small;
+      font-weight: 200;
+      background-color: #78c4d4;
+      color: white;
+      padding: 5px 50px;
+      height: 65px;
+      text-align: center;
+    }
+  
+    .footer-banner-company {
+      float: none;
+    }
+  
+    .footer-banner-copyright {
+      float: none;
+    }
+  }
+  
+  /* Floating WhatsApp Button */
+  
+  .float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 100;
+    visibility: hidden;
+  }
+  
+  .float:hover {
+    color: #ededed;
+    transition: 0.5s;
+  }
+  
+  .my-float {
+    margin-top: 16px;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .float {
+      visibility: visible;
+    }
+  }
+  
+  /* About Us Page */
+  .page-header.about-us {
+    background-image: url(/img/aboutusphoto.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
+  }
+  
+  .page-title {
+    height: 300px;
+    left: 150px;
+    padding-top: 100px;
+    position: absolute;
+    font-size: 3rem;
+    color: white;
+  }
+  
+  .page-description.about-us {
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 200;
+    font-size: 1.4rem;
+    line-height: 180%;
+    padding: 30px 15%;
+  }
+  
+  #aboutus_gallery {
+    font-family: "Source Sans Pro", sans-serif !important;
+    font-weight: bold !important;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .page-title {
+      width: 100%;
+      word-wrap: break-word;
+      left: 0;
+      padding: 0;
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center !important;
+    }
+  }
+  
+  /* My Order Section */
+  .myorder-section {
+    padding: 30px 10%;
+  }
+  
+  .page-desc {
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 1.4rem;
+    font-weight: 200;
+    line-height: 180%;
+    padding: 30px 10%;
+  }
+  
+  .myorder-input {
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: normal;
+  }
+  
+  .myorder-form {
+    padding: 5% 0;
+  }
+  
+  /* Contact Section */
+  
+  .contact-section {
+    padding: 30px 10%;
+  }
+  
+  .contact-title {
+    font-size: 25px;
+    font-weight: 400;
+    color: #646464;
+    padding: 50px 0;
+    text-align: left;
+  }
+  
+  .contact-box {
+    padding: 15px;
+  }
+  
+  .contact-box-icon {
+    display: block;
+    float: left;
+    width: 42px;
+    height: 45px;
+    margin: 0 15px 0 0;
+  }
+  
+  .icon-company {
+    background: url(https://www.vipflughafentransfer.com/images/ikonlar.png)
+      no-repeat -11px -662px;
+  }
+  
+  .icon-email {
+    background: url(https://www.vipflughafentransfer.com/images/ikonlar.png)
+      no-repeat -282px -664px;
+  }
+  
+  .icon-address {
+    background: url(https://www.vipflughafentransfer.com/images/ikonlar.png)
+      no-repeat -62px -662px;
+  }
+  
+  .icon-call-center {
+    background: url(https://www.vipflughafentransfer.com/images/ikonlar.png)
+      no-repeat -225px -662px;
+  }
+  
+  .contact-box-title {
+    text-align: left;
+  }
+  
+  .contact-box-desc {
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 1.4rem;
+    font-weight: 200;
+    line-height: 180%;
+    text-align: left;
+  }
+  
+  .contact-map-container {
+    margin-top: 100px;
+  }
+  
+  #contact-map {
+    height: 550px;
+    width: 100%;
+  }
+  
+  .contact-map-form {
+    background-color: rgba(120, 196, 212, 0.9);
+    height: 550px;
+    width: 35%;
+    padding: 20px 40px;
+    position: absolute;
+    display: block;
+    float: right;
+    right: 0;
+    z-index: 1;
+  }
+  
+  .map-form-title {
+    font-size: 24px;
+    font-weight: normal;
+    padding: 10px 0;
+    margin: 10px 0;
+    text-align: left;
+    color: white;
+  }
+  
+  .map-form-input {
+    background-color: transparent;
+    color: white;
+    margin: 15px 0;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: normal;
+    resize: vertical;
+    max-height: 150px;
+  }
+  
+  .form-control.map-form-input::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 1; /* Firefox */
+  }
+  
+  .form-control.map-form-input:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: white;
+  }
+  
+  .form-control.map-form-input::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: white;
+  }
+  
+  .form-control.map-form-input:focus {
+    background-color: transparent;
+    border-color: white;
+    color: white;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+  }
+  
+  @media only screen and (max-width: 966px) {
+    .contact-map-form {
+      background-color: rgba(120, 196, 212, 0.9);
+      height: 550px;
+      width: 100%;
+      padding: 20px 40px;
+      position: static;
+      display: block;
+      float: right;
+      right: 0;
+      z-index: 1;
+    }
+  }
+  
+  /* Transfers Page */
+  
+  #transfers-map {
+    height: 550px;
+    width: 100%;
+  }
+  
+  .vehicles-section {
+    width: 100%;
+    background-color: #f2f2f2;
+    padding-bottom: 50px;
+  }
+  
+  .vehicle-box {
+    width: 80%;
+    height: 300px;
+    margin: 50px auto 0;
+    padding: 0;
+    background-color: white;
+    -webkit-box-shadow: -1px 5px 25px 3px rgba(0, 0, 0, 0.22);
+    box-shadow: -1px 5px 25px 3px rgba(0, 0, 0, 0.22);
+  }
+  
+  .vehicle-box:last-child {
+    margin-bottom: 50px;
+  }
+  
+  .vehicle-img {
+    width: 25%;
+    height: 100%;
+    margin: 0%;
+    display: block;
+    float: left;
+    position: relative;
+    object-fit: cover;
+  }
+  
+  .vehicle-info-section {
+    width: 44%;
+    height: 100%;
+    margin: 0 3%;
+    padding: 0 3%;
+    float: left;
+    position: relative;
+    align-items: center;
+  }
+  
+  .vehicle-book {
+    width: 25%;
+    height: 100%;
+    margin: 0;
+    background-color: #78c4d4;
+    transition: background-color 0.3s ease-in-out;
+    color: white;
+    display: flex;
+    float: left;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .vehicle-book:hover {
+    background-color: #6cb0bf;
+  }
+  
+  .vehicle-transfer-price {
+    font-size: 4rem;
+    font-weight: 200;
+    color: white;
+  }
+  
+  .vehicle-transfer-price.sup {
+    font-weight: normal;
+    font-size: 2rem;
+  }
+  
+  .vehicle-info table {
+    width: 100%;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+    text-align: left;
+    border-collapse: inherit;
+    border-spacing: 0 10px;
+  }
+  
+  .vehicle-info-icon {
+    width: 25px;
+    height: 25px;
+    color: #78c4d4;
+    margin: 0 8px 0 0;
+    text-align: center;
+  }
+  
+  .vehicle-title {
+    font-size: 1.8rem;
+    color: #575757;
+    text-align: left;
+    font-weight: 200;
+    margin: 30px 0;
+  }
+  
+  .vehicle-title.small {
+    font-size: 1.3rem;
+  }
+  
+  @media only screen and (max-width: 960px) {
+    .vehicle-box {
+      height: auto;
+    }
+  
+    .vehicle-img {
+      width: 100%;
+      height: 400px;
+      padding: 25px 0;
+      display: block;
+      float: none;
+      position: static;
+    }
+  
+    .vehicle-info-section {
+      width: 100%;
+      height: auto;
+      float: none;
+      position: static;
+      text-align: center;
+    }
+  
+    .vehicle-book {
+      width: 100%;
+      height: 200px;
+      display: flex;
+      float: none;
+      position: static;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  
+  /* Transfer Order Section */
+  
+  .order-form {
+    background-color: #f2f2f2;
+  }
+  
+  .order-container {
+    width: 90%;
+    overflow: hidden;
+    padding: 50px 25px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  
+  .order-info-text {
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 300;
+    font-size: 1.3rem;
+    line-height: 180%;
+  }
+  
+  .order-form-section {
+    margin: 10px 0;
+  }
+  
+  .order-left {
+    width: 70%;
+    padding: 25px;
+    position: relative;
+    float: left;
+    background-color: white;
+    -webkit-box-shadow: -1px 5px 25px 3px rgba(0, 0, 0, 0.22);
+    box-shadow: -1px 5px 25px 3px rgba(0, 0, 0, 0.22);
+  }
+  
+  .order-right {
+    width: 27%;
+    padding: 25px;
+    position: relative;
+    float: right;
+    background-color: white;
+    -webkit-box-shadow: -1px 5px 25px 3px rgba(0, 0, 0, 0.22);
+    box-shadow: -1px 5px 25px 3px rgba(0, 0, 0, 0.22);
+  }
+  
+  .order-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 20px 0;
+    color: #575757;
+  }
+  
+  .order-info {
+    margin: 10px 0;
+  }
+  
+  .order-row {
+    width: 45%;
+    display: inline-block;
+    margin: 0;
+  }
+  
+  .single-row {
+      margin-left: 0 !important;
+  }
+  
+  .order-row:last-child {
+    margin-left: 3%;
+  }
+  
+  .order-row {
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 300;
+    font-size: 1.2rem;
+  }
+  
+  .order-row .select {
+    width: 40px;
+  }
+  
+  .order-row .alone {
+    display: block;
+  }
+  
+  .single {
+    width: 94%;
+    margin: 0 !important;
+  }
+  
+  .order-right ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .order-selection {
+    font-family: "Source Sans Pro", sans-serif;
+    padding: 12px 5px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+  }
+  
+  .order-selection:first-child {
+    border-top: 1px solid rgba(0, 0, 0, 0.07);
+  }
+  
+  .gray {
+    background-color: rgba(0, 0, 0, 0.02);
+  }
+  
+  .green {
+    background-color: #1a7d4d;
+    color: white !important;
+  }
+  
+  .order-selection-icon {
+    float: left;
+    color: #78c4d4;
+    font-size: 24px;
+    margin: 6px 15px;
+  }
+  
+  .order-selection-title {
+    font-size: 13px;
+    font-weight: bold;
+  }
+  
+  .order-selection-text {
+    font-size: 17px;
+    font-weight: 300;
+  }
+  
+  .order-discount {
+    font-size: 1rem;
+    font-weight: 300;
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid white;
+  }
+  
+  .last {
+    background-color: #6cb0bf;
+    color: white;
+  }
+  
+  .last-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .payment-check {
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 300;
+    font-size: 1.2rem;
+  }
+  
+  .order-agreement {
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 300;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 100px 0 50px;
+  }
+  
+  .order-send {
+    margin: auto;
+    display: block;
+  }
+  
+  .order-agreement-table {
+    margin: auto;
+  }
+  
+  @media only screen and (max-width: 960px) {
+    .order-container {
+      padding: 50px 0;
+    }
+  
+    .order-left {
+      float: none;
+      width: 100%;
+    }
+  
+    .order-right {
+      float: none;
+      width: 100%;
+      margin-top: 50px;
+    }
+  
+    .order-row {
+      width: 95%;
+      display: contents;
+    }
+  
+    .no-title {
+      margin-top: 15px;
+    }
+  }
+  
+  /* Order Details */
+  
+  .order-details {
+    width: 80%;
+    margin: 50px auto;
+  }
+  
+  .order-success {
+    font-size: 6rem;
+    color: #25d366;
+  }
+  
+  .order-success-title {
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 300;
+    font-size: 2rem;
+    line-height: 180%;
+  }
+  
+  .order-id {
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: bold;
+    font-size: 1.3rem;
+  }
+  
+  .order-details {
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 300;
+    font-size: 1.3rem;
+  }
+  
+  .order-details-table {
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 1.2rem;
+    margin: auto;
+  }
+  
+  .order-details-row {
+    width: 50%;
+  }
+  
+  .order-details-left-col {
+    font-weight: bold;
+    text-align: right;
+    padding: 10px 50px;
+  }
+  
+  .order-details-right-col {
+    text-align: left;
+    max-width: 300px;
+  }
+  
+  .order-details-center-col {
+      text-align: center;
+  }
+  
+  .table-seperator {
+      font-family: "Source Sans Pro", sans-serif;
+      font-weight: bold;
+      font-size: 1.5rem;
+      text-align: center;
+      padding: 30px 0;
+  }
+  

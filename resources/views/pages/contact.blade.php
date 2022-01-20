@@ -90,5 +90,5 @@
     <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDpCIRvXdsdbsRi1gkBnCNO_CRzEC9AZc&callback=initMap&libraries=&v=weekly"
         async></script>
-    <script src="js/contact1.0.5.js"></script>
+    <script src="{{ mix('js/contact.js') }}"></script>
 @endsection

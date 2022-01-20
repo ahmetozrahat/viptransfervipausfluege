@@ -195,5 +195,5 @@
 @endsection
 @section('scripts')
     <script src="js/bootstrap-input-spinner.js"></script>
-    <script src="js/main1.0.5.js"></script>
+    <script src="{{ mix('js/app.js') }}"></script>
 @endsection
