@@ -2,128 +2,111 @@ require('./bootstrap');
 
 import $ from "jquery";
 
-let currency = undefined;
+/**
+ * Initialize the view objects with the proper names
+ * in order to use them in fuctions with a meaningful way.
+ */
+let transferDirectionCol = $('#booking-select-transfer-direction');
+
+let transferPointCol2 = $('#booking-select-transfer-point-col2');
+let transferPointCol3 = $('#booking-select-transfer-point-col3');
+
+let airportCol2 = $('#booking-select-airport-col2');
+let airportCol3 = $('#booking-select-airport-col3');;
+
+let passengerDropdown = $('#passenger-dropdown');
+let passengerAdultQuantity = $('#passenger-adult-quantity');
+let passengerKidQuantity = $('#passenger-kid-quantity');
+let passengerBabyQuantity = $('#passenger-baby-quantity');
+
+/**
+ * Let's create variables for holding the translations for
+ * transfer point column and airport column.
+ * 
+ * We will get it from the HTML's meta tag.
+*/
+
+let airportTranslation = $('meta[name="airport-translation"]').attr('content');
+let transferPointTranslation = $('meta[name="transfer-point-translation"]').attr('content');
 
 $(function () {
-    loadCurrency();
-
-    switchCurrency();
-
     initializeView();
 
     handleClickListeners();
 });
 
-function loadCurrency() {
-    let cookies = document.cookie.split(';');
-
-    cookies.forEach(element => {
-        if (element.includes('currency')) {
-            switch (element.split('=')[1]) {
-                case 'tl':
-                    // Load Turkish Liras currency.
-                    currency = "tl";
-                    break;
-                case 'usd':
-                    // Load United States Dollars currency.
-                    currency = "usd";
-                    break;
-                case 'eur':
-                    // Load Euros currency.
-                    currency = "eur";
-                    break;
-                default:
-                    currency = "tl";
-                    break;
-            }
-        }
-    });
-}
-
-function switchCurrency() {
-    $("#navbarDropdownCurrency a").on('click', function () {
-        if ($(this).attr('id') == 'currency_tl') {
-            document.cookie = "currency=tl";
-        } else if ($(this).attr('id') == 'currency_usd') {
-            document.cookie = "currency=usd";
-        } else if ($(this).attr('id') == 'currency_eur') {
-            document.cookie = "currency=eur";
-        } else {
-            document.cookie = "currency=eur";
-        }
-
-        location.reload();
-    });
-}
-
+/**
+ * Initialize the form with a default transfer type
+ * of From Airport to Transfer Point.
+ * 
+ * So we will hide the transfer point from column-2 and
+ * hide the airport from column-3.
+ * 
+ * We will also need to hide the passenger count view.
+ */
 function initializeView() {
-    $("#booking-select-transfer-point-col2").hide();
-    $("#booking-select-airport-col3").hide();
+    transferPointCol2.hide();
+    airportCol3.hide();
 
-    $("#passenger-dropdown").css("display", "none");
+    passengerDropdown.css("display", "none");
 }
 
+/**
+ * Function for registering click events.
+ */
 function handleClickListeners() {
-    $("#booking-select-transfer-direction").on('change', function () {
+    transferDirectionCol.on('change', function () {
+        // First clear the column-2 and column-3.
+        transferPointCol2.empty();
+        transferPointCol3.empty();
+        airportCol2.empty();
+        airportCol3.empty();
 
-        $("#booking-select-transfer-point-col2").empty();
-        $("#booking-select-transfer-point-col3").empty();
-        $("#booking-select-airport-col2").empty();
-        $("#booking-select-airport-col3").empty();
+        // Append the translation strings to the columns.
+        transferPointCol2.html(`<option value="" disabled selected> ${transferPointTranslation}`);
+        transferPointCol3.html(`<option value="" disabled selected> ${transferPointTranslation}`);
+        airportCol2.html(`<option value="" disabled selected> ${airportTranslation}`);
+        airportCol3.html(`<option value="" disabled selected> ${airportTranslation}`);
 
-        switch (lang) {
-            case "tr":
-                $("#booking-select-transfer-point-col2").html('<option value="" disabled selected>' + languageFile.tr.booking_section_col3 + '</option>');
-                $("#booking-select-transfer-point-col3").html('<option value="" disabled selected>' + languageFile.tr.booking_section_col3 + '</option>');
-                $("#booking-select-airport-col2").html('<option value="" disabled selected>' + languageFile.tr.booking_section_col2 + '</option>');
-                $("#booking-select-airport-col3").html('<option value="" disabled selected>' + languageFile.tr.booking_section_col2 + '</option>');
-                break;
-            case "en":
-                $("#booking-select-transfer-point-col2").html('<option value="" disabled selected>' + languageFile.en.booking_section_col3 + '</option>');
-                $("#booking-select-transfer-point-col3").html('<option value="" disabled selected>' + languageFile.en.booking_section_col3 + '</option>');
-                $("#booking-select-airport-col2").html('<option value="" disabled selected>' + languageFile.en.booking_section_col2 + '</option>');
-                $("#booking-select-airport-col3").html('<option value="" disabled selected>' + languageFile.en.booking_section_col2 + '</option>');
-                break;
-            case "de":
-                $("#booking-select-transfer-point-col2").html('<option value="" disabled selected>' + languageFile.de.booking_section_col3 + '</option>');
-                $("#booking-select-transfer-point-col3").html('<option value="" disabled selected>' + languageFile.de.booking_section_col3 + '</option>');
-                $("#booking-select-airport-col2").html('<option value="" disabled selected>' + languageFile.de.booking_section_col2 + '</option>');
-                $("#booking-select-airport-col3").html('<option value="" disabled selected>' + languageFile.de.booking_section_col2 + '</option>');
-                break;
-            default:
-                $("#booking-select-transfer-point-col2").html('<option value="" disabled selected>' + languageFile.de.booking_section_col3 + '</option>');
-                $("#booking-select-transfer-point-col3").html('<option value="" disabled selected>' + languageFile.de.booking_section_col3 + '</option>');
-                $("#booking-select-airport-col2").html('<option value="" disabled selected>' + languageFile.de.booking_section_col2 + '</option>');
-                $("#booking-select-airport-col3").html('<option value="" disabled selected>' + languageFile.de.booking_section_col2 + '</option>');
-                break;
-        }
-
+        // Check if the transfer type is
+        // with return
+        // or
+        // from airport to transfer point.
         if ($(this).val() == 1 || $(this).val() == 2) {
-            $("#booking-select-airport-col2").show();
-            $("#booking-select-airport-col2").prop('required', true);
+            // Show the airport field on column-2.
+            // Show the transfer point field on column-3.
+            // Hide the unnecessary fields.
 
-            $("#booking-select-transfer-point-col2").hide();
-            $("#booking-select-transfer-point-col2").prop('required', false);
+            airportCol2.show();
+            airportCol2.prop('required', true);
 
-            $("#booking-select-airport-col3").hide();
-            $("#booking-select-airport-col3").prop('required', false);
+            transferPointCol2.hide();
+            transferPointCol2.prop('required', false);
 
-            $("#booking-select-transfer-point-col3").show();
-            $("#booking-select-transfer-point-col3").prop('required', true);
+            airportCol3.hide();
+            airportCol3.prop('required', false);
+
+            transferPointCol3.show();
+            transferPointCol3.prop('required', true);
         } else {
-            $("#booking-select-airport-col2").hide();
-            $("#booking-select-airport-col2").prop('required', false);
+            // Show the transfer point field on column-2.
+            // Show the airport field on column-3.
+            // Hide the unnecessary fields.
 
-            $("#booking-select-transfer-point-col2").show();
-            $("#booking-select-transfer-point-col2").prop('required', true);
+            airportCol2.hide();
+            airportCol2.prop('required', false);
 
-            $("#booking-select-airport-col3").show();
-            $("#booking-select-airport-col3").prop('required', true);
+            transferPointCol2.show();
+            transferPointCol2.prop('required', true);
 
-            $("#booking-select-transfer-point-col3").hide();
-            $("#booking-select-transfer-point-col3").prop('required', false);
+            airportCol3.show();
+            airportCol3.prop('required', true);
+
+            transferPointCol3.hide();
+            transferPointCol3.prop('required', false);
         }
 
+        // Fetch the airport list.
         getAirportList();
     });
 
@@ -214,27 +197,21 @@ function handleClickListeners() {
     });
 }
 
+/**
+ * Function for updating the passenger count
+ * when the quantity is changed.
+ */
 function updatePassengerCount() {
-    let adultquantity = parseInt($("#passenger-adult-quantity").val(), 10);
-    let kidquantity = parseInt($("#passenger-kid-quantity").val(), 10);
-    let babyquantity = parseInt($("#passenger-baby-quantity").val(), 10);
+    let adultquantity = parseInt(passengerAdultQuantity.val(), 10);
+    let kidquantity = parseInt(passengerKidQuantity.val(), 10);
+    let babyquantity = parseInt(passengerBabyQuantity.val(), 10);
 
-    switch (lang) {
-        case "tr":
-            $("#passengers-count").html((adultquantity + kidquantity + babyquantity) + " " + languageFile.tr.person);
-            break;
-        case "en":
-            $("#passengers-count").html((adultquantity + kidquantity + babyquantity) + " " + languageFile.en.person);
-            break;
-        case "de":
-            $("#passengers-count").html((adultquantity + kidquantity + babyquantity) + " " + languageFile.de.person);
-            break;
-        default:
-            $("#passengers-count").html((adultquantity + kidquantity + babyquantity) + " " + languageFile.de.person);
-            break;
-    }
+    $('#passengers-count').html((adultquantity + kidquantity + babyquantity));
 }
 
+/**
+ * Function for getting the airport list.
+ */
 function getAirportList() {
     $.ajax({
         url: "v1/getAirports.php",
@@ -246,11 +223,11 @@ function getAirportList() {
 
                 for (let i = 0; i < data.length; i++) {
 
-                    $("#booking-select-airport-col2").append(
+                    airportCol2.append(
                         '<option value=' + data[i].id + '>' + data[i].name + '</option>'
                     );
 
-                    $("#booking-select-airport-col3").append(
+                    airportCol3.append(
                         '<option value=' + data[i].id + '>' + data[i].name + '</option>'
                     );
                 }
@@ -262,6 +239,9 @@ function getAirportList() {
     });
 }
 
+/**
+ * Function for getting the transfer points.
+ */
 function getTransferPoints() {
     $.ajax({
         url: "v1/getTransferPoints.php",
@@ -273,11 +253,11 @@ function getTransferPoints() {
 
                 for (let i = 0; i < data.length; i++) {
 
-                    $("#booking-select-transfer-point-col2").append(
+                    transferPointCol2.append(
                         '<option value=' + data[i].id + '>' + data[i].name + '</option>'
                     );
 
-                    $("#booking-select-transfer-point-col3").append(
+                    transferPointCol3.append(
                         '<option value=' + data[i].id + '>' + data[i].name + '</option>'
                     );
                 }
