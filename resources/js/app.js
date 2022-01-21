@@ -4,7 +4,7 @@ import $ from "jquery";
 
 /**
  * Initialize the view objects with the proper names
- * in order to use them in fuctions with a meaningful way.
+ * in order to use them in functions with a meaningful way.
  */
 let transferDirectionCol = $('#booking-select-transfer-direction');
 
@@ -22,7 +22,7 @@ let passengerBabyQuantity = $('#passenger-baby-quantity');
 /**
  * Let's create variables for holding the translations for
  * transfer point column and airport column.
- * 
+ *
  * We will get it from the HTML's meta tag.
 */
 
@@ -38,10 +38,10 @@ $(function () {
 /**
  * Initialize the form with a default transfer type
  * of From Airport to Transfer Point.
- * 
+ *
  * So we will hide the transfer point from column-2 and
  * hide the airport from column-3.
- * 
+ *
  * We will also need to hide the passenger count view.
  */
 function initializeView() {
