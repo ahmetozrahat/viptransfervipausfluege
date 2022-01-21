@@ -234,29 +234,20 @@ function updatePassengerCount(view, isIncremented) {
  */
 function getAirportList() {
     $.ajax({
-        url: "v1/getAirports.php",
-        type: "post",
-        success: function (response) {
-            if (response !== false && response !== undefined) {
-
-                let data = JSON.parse(response);
-
-                for (let i = 0; i < data.length; i++) {
-
-                    airportCol2.append(
-                        '<option value=' + data[i].id + '>' + data[i].name + '</option>'
-                    );
-
-                    airportCol3.append(
-                        '<option value=' + data[i].id + '>' + data[i].name + '</option>'
-                    );
-                }
-            }
+        type: 'POST',
+        url: '/api/v1/airports',
+        data: {
+            _token: $('meta[name=_token]').attr('content')
         },
-        error: function (jqXHR, textStatus, errorThrown) {
-            console.log(textStatus, errorThrown);
+        success: function (data) {
+            // Airports fetched successfully.
+            // Load them into the airports list.
+            loadAirports(data);
+        },
+        error: function (error) {
+            console.log(error);
         }
-    });
+    })
 }
 
 /**
@@ -287,4 +278,22 @@ function getTransferPoints() {
             console.log(textStatus, errorThrown);
         }
     });
+}
+
+/**
+ * Function for appending airports to the form.
+ *
+ * @param airports
+ */
+function loadAirports(airports) {
+    for(let i = 0; i < airports.length; i++) {
+        let airport = airports[i]; // Airport object.
+
+        airportCol2.append(
+            '<option value=' + airport.id + '>' + airport.name + '</option>'
+        );
+        airportCol3.append(
+            '<option value=' + airport.id + '>' + airport.name + '</option>'
+        );
+    }
 }

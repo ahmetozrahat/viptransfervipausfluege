@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Airport;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
@@ -28,4 +29,10 @@ Route::group(['prefix' => '{language}'], function () {
     Route::get('/myorder', [MyOrderController::class, 'index'])->name('myorder');
 
     Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+});
+
+Route::group(['prefix' => 'api/v1'], function (){
+    Route::post('airports', function () {
+        return Airport::all();
+    });
 });
