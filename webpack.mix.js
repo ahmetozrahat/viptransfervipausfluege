@@ -18,6 +18,7 @@ mix.js('resources/js/app.js', 'public/js')
     .js('resources/js/bootstrap-input-spinner.js', 'public/js')
     .js('resources/js/jquery.toast.min.js', 'public/js')
     .js('resources/js/transfer.js', 'public/js')
+    .js('resources/js/loadingOverlay.js', 'public/js')
     .postCss('resources/css/app.css', 'public/css', [
         //
     ])
