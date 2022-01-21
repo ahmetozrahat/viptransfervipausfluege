@@ -255,27 +255,18 @@ function getAirportList() {
  */
 function getTransferPoints() {
     $.ajax({
-        url: "v1/getTransferPoints.php",
-        type: "post",
-        success: function (response) {
-            if (response !== false && response !== undefined) {
-
-                let data = JSON.parse(response);
-
-                for (let i = 0; i < data.length; i++) {
-
-                    transferPointCol2.append(
-                        '<option value=' + data[i].id + '>' + data[i].name + '</option>'
-                    );
-
-                    transferPointCol3.append(
-                        '<option value=' + data[i].id + '>' + data[i].name + '</option>'
-                    );
-                }
-            }
+        type: 'POST',
+        url: '/api/v1/transfer-points',
+        data: {
+            _token: $('meta[name=_token]').attr('content')
         },
-        error: function (jqXHR, textStatus, errorThrown) {
-            console.log(textStatus, errorThrown);
+        success: function (data) {
+            // Transfer points were fetched successfully.
+            // Load them into the transfer points list.
+            loadTransferPoints(data);
+        },
+        error: function (error) {
+            console.log(error);
         }
     });
 }
@@ -294,6 +285,25 @@ function loadAirports(airports) {
         );
         airportCol3.append(
             '<option value=' + airport.id + '>' + airport.name + '</option>'
+        );
+    }
+}
+
+/**
+ * Function for appending transfer points to the form.
+ *
+ * @param transferPoints
+ */
+function loadTransferPoints(transferPoints) {
+    for(let i = 0; i < transferPoints.length; i++) {
+        let transferPoint = transferPoints[i];
+
+        transferPointCol2.append(
+            '<option value=' + transferPoint.id + '>' + transferPoint.name + '</option>'
+        );
+
+        transferPointCol3.append(
+            '<option value=' + transferPoint.id + '>' + transferPoint.name + '</option>'
         );
     }
 }

@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Airport;
+use App\Models\TransferPoint;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
@@ -34,5 +35,9 @@ Route::group(['prefix' => '{language}'], function () {
 Route::group(['prefix' => 'api/v1'], function (){
     Route::post('airports', function () {
         return Airport::all();
+    });
+
+    Route::post('transfer-points', function () {
+       return TransferPoint::all();
     });
 });
