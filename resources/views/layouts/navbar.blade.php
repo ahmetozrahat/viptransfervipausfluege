@@ -30,13 +30,9 @@
                         {{ __('navbar_locale') }}
                     </a>
                     <ul class="dropdown-menu" id="navbarDropdownLocale" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="{{ route(Route::currentRouteName(), 'tr') }}">Türkçe</a>
-                        </li>
-                        <li><a class="dropdown-item" href="{{ route(Route::currentRouteName(), 'en') }}">English</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="{{ route(Route::currentRouteName(), 'de') }}">Deutsch</a>
-                        </li>
+                        <li><a class="dropdown-item" href="{{ route('home', 'tr') }}">Türkçe</a></li>
+                        <li><a class="dropdown-item" href="{{ route('home', 'en') }}">English</a></li>
+                        <li><a class="dropdown-item" href="{{ route('home', 'de') }}">Deutsch</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
