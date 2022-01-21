@@ -6,18 +6,35 @@ import $ from "jquery";
  * Initialize the view objects with the proper names
  * in order to use them in functions with a meaningful way.
  */
+let body = $('body');
+
 let transferDirectionCol = $('#booking-select-transfer-direction');
 
+let transferPointName = $('#transfer-point-name');
 let transferPointCol2 = $('#booking-select-transfer-point-col2');
 let transferPointCol3 = $('#booking-select-transfer-point-col3');
 
+let airportName = $('#airport-name');
 let airportCol2 = $('#booking-select-airport-col2');
-let airportCol3 = $('#booking-select-airport-col3');;
+let airportCol3 = $('#booking-select-airport-col3');
 
+let passengerDropdownCol = $("#booking-select-passengers");
+let passengerCount = $('#passengers-count')
 let passengerDropdown = $('#passenger-dropdown');
+
 let passengerAdultQuantity = $('#passenger-adult-quantity');
+let passengerAdultIncrement = $('#btn-increment-adult-quantity');
+let passengerAdultDecrement = $('#btn-decrement-adult-quantity');
+
 let passengerKidQuantity = $('#passenger-kid-quantity');
+let passengerKidIncrement = $('#btn-increment-kid-quantity');
+let passengerKidDecrement = $('#btn-decrement-kid-quantity');
+
 let passengerBabyQuantity = $('#passenger-baby-quantity');
+let passengerBabyIncrement = $('#btn-increment-baby-quantity');
+let passengerBabyDecrement = $('#btn-decrement-baby-quantity');
+
+let passengerQuantitySubmit = $('#passenger-quantity-submit');
 
 /**
  * Let's create variables for holding the translations for
@@ -110,103 +127,106 @@ function handleClickListeners() {
         getAirportList();
     });
 
-    $('body').on('change', '#booking-select-airport-col2', function () {
-        $("#airport-name").val($("#booking-select-airport-col2 option:selected").text());
+    body.on('change', '#booking-select-airport-col2', function () {
+        airportName.val(
+            $("#booking-select-airport-col2 option:selected").text()
+        );
         getTransferPoints();
     });
 
-    $('body').on('change', '#booking-select-airport-col3', function () {
-        $("#airport-name").val($("#booking-select-airport-col3 option:selected").text());
+    body.on('change', '#booking-select-airport-col3', function () {
+        airportName.val(
+            $("#booking-select-airport-col3 option:selected").text()
+        );
         getTransferPoints();
     });
 
-    $('body').on('change', '#booking-select-transfer-point-col2', function () {
-        $("#transfer-point-name").val($("#booking-select-transfer-point-col2 option:selected").text());
+    body.on('change', '#booking-select-transfer-point-col2', function () {
+        transferPointName.val(
+            $("#booking-select-transfer-point-col2 option:selected").text()
+        );
     });
 
-    $('body').on('change', '#booking-select-transfer-point-col3', function () {
-        $("#transfer-point-name").val($("#booking-select-transfer-point-col3 option:selected").text());
+    body.on('change', '#booking-select-transfer-point-col3', function () {
+        transferPointName.val(
+            $("#booking-select-transfer-point-col3 option:selected").text()
+        );
     });
 
     // For showing and hiding the dropdown menu
     // when clicking the 'booking-select-passengers'
-    $("#booking-select-passengers").on('click', function () {
-        if ($("#passenger-dropdown").is(":visible")) {
-            $("#passenger-dropdown").css("display", "none");
+    passengerDropdownCol.on('click', function () {
+        if (passengerDropdown.is(":visible")) {
+            passengerDropdown.css("display", "none");
         } else {
-            $("#passenger-dropdown").css("display", "block");
+            passengerDropdown.css("display", "block");
         }
     });
 
     // Incrementing the Adult Quantity when clicked +
-    $("#btn-increment-adult-quantity").on('click', function () {
-        let previous = parseInt($("#passenger-adult-quantity").val(), 10);
-        $("#passenger-adult-quantity").val(previous + 1);
-        updatePassengerCount();
+    passengerAdultIncrement.on('click', function () {
+        updatePassengerCount(passengerAdultQuantity, true);
     });
 
     // Decrementing the Adult Quantity when clicked -
     // if the value is greater than 1
-    $("#btn-decrement-adult-quantity").on('click', function () {
-        let previous = parseInt($("#passenger-adult-quantity").val(), 10);
-
-        if (previous > 1)
-            $("#passenger-adult-quantity").val(previous - 1);
-
-        updatePassengerCount();
+    passengerAdultDecrement.on('click', function () {
+        updatePassengerCount(passengerAdultQuantity, false);
     });
 
     // Incrementing the Kid Quantity when clicked +
-    $("#btn-increment-kid-quantity").on('click', function () {
-        let previous = parseInt($("#passenger-kid-quantity").val(), 10);
-        $("#passenger-kid-quantity").val(previous + 1);
-        updatePassengerCount();
+    passengerKidIncrement.on('click', function () {
+        updatePassengerCount(passengerKidQuantity, true);
     });
 
     // Decrementing the Kid Quantity when clicked -
     // if the value is greater than 0
-    $("#btn-decrement-kid-quantity").on('click', function () {
-        let previous = parseInt($("#passenger-kid-quantity").val(), 10);
-
-        if (previous > 0)
-            $("#passenger-kid-quantity").val(previous - 1);
-
-        updatePassengerCount();
+    passengerKidDecrement.on('click', function () {
+        updatePassengerCount(passengerKidQuantity, false);
     });
 
     // Incrementing the Baby Quantity when clicked +
-    $("#btn-increment-baby-quantity").on('click', function () {
-        let previous = parseInt($("#passenger-baby-quantity").val(), 10);
-        $("#passenger-baby-quantity").val(previous + 1);
-        updatePassengerCount();
+    passengerBabyIncrement.on('click', function () {
+        updatePassengerCount(passengerBabyQuantity, true);
     });
 
     // Decrementing the Baby Quantity when clicked -
     // if the value is greater than 0
-    $("#btn-decrement-baby-quantity").on('click', function () {
-        let previous = parseInt($("#passenger-baby-quantity").val(), 10);
-
-        if (previous > 0)
-            $("#passenger-baby-quantity").val(previous - 1);
-
-        updatePassengerCount();
+    passengerBabyDecrement.on('click', function () {
+        updatePassengerCount(passengerBabyQuantity, false);
     });
 
-    $("#passenger-quantity-submit").on('click', function () {
-        $("#passenger-dropdown").css("display", "none");
+    passengerQuantitySubmit.on('click', function () {
+        passengerDropdown.css("display", "none");
     });
 }
 
 /**
- * Function for updating the passenger count
- * when the quantity is changed.
+ * Function for incrementing or decrementing a given field,
+ * and updating the total amount of quantity.
+ *
+ * @param view
+ * @param isIncremented
  */
-function updatePassengerCount() {
-    let adultquantity = parseInt(passengerAdultQuantity.val(), 10);
-    let kidquantity = parseInt(passengerKidQuantity.val(), 10);
-    let babyquantity = parseInt(passengerBabyQuantity.val(), 10);
+function updatePassengerCount(view, isIncremented) {
+    if (isIncremented) {
+        // Increment the given view by 1.
+        let previous = parseInt(view.val(), 10);
+        view.val(previous + 1);
+    }else {
+        // Decrement the given view by 1 if possible.
+        let previous = parseInt(view.val(), 10);
 
-    $('#passengers-count').html((adultquantity + kidquantity + babyquantity));
+        if (previous > 1)
+            view.val(previous - 1);
+    }
+
+    // Update quantity.
+    let adultQuantity = parseInt(passengerAdultQuantity.val(), 10);
+    let kidQuantity = parseInt(passengerKidQuantity.val(), 10);
+    let babyQuantity = parseInt(passengerBabyQuantity.val(), 10);
+
+    passengerCount.html((adultQuantity + kidQuantity + babyQuantity));
 }
 
 /**
