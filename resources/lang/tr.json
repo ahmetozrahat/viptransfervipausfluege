@@ -76,9 +76,9 @@
     "person": "Kişi",
     "transfer_person": "Kişi",
     "transfer_luggage": "Bavul",
-    "transfer_person_capacity": "<i class=\"fas fa-users vehicle-info-icon\"></i>Kişi Kapasitesi",
-    "transfer_luggage_capacity": "<i class=\"fas fa-suitcase vehicle-info-icon\"></i>Bavul Kapasitesi",
-    "transfer_duration": "<i class=\"fas fa-stopwatch vehicle-info-icon\"></i>Transfer Süresi",
+    "transfer_person_capacity": "Kişi Kapasitesi",
+    "transfer_luggage_capacity": "Bavul Kapasitesi",
+    "transfer_duration": "Transfer Süresi",
     "transfer_book_now": "REZERVASYON YAP",
     "transfer_order_title": "TRANSFER SİPARİŞİ",
     "transfer_order_page_info": "Siparişinizi tamamlamak için lütfen alttaki bilgileri eksiksiz giriniz ve SİPARİŞİ GÖNDER butonuna basınız.",
@@ -146,5 +146,5 @@
     "adult": "Yetişkin",
     "kid": "Çocuk",
     "baby": "Bebek",
-    "undefined": ": Belirtilmemiş"
+    "undefined": "Belirtilmemiş"
 }

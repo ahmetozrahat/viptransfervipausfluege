@@ -75,9 +75,9 @@
     "person": "Persons",
     "transfer_person": "Persons",
     "transfer_luggage": "Luggages",
-    "transfer_person_capacity": "<i class=\"fas fa-users vehicle-info-icon\"></i>Person Capacity",
-    "transfer_luggage_capacity": "<i class=\"fas fa-suitcase vehicle-info-icon\"></i>Luggage Capacity",
-    "transfer_duration": "<i class=\"fas fa-stopwatch vehicle-info-icon\"></i>Transfer Duration",
+    "transfer_person_capacity": "Person Capacity",
+    "transfer_luggage_capacity": "Luggage Capacity",
+    "transfer_duration": "Transfer Duration",
     "transfer_book_now": "BOOK NOW",
     "transfer_order_title": "TRANSFER ORDER",
     "transfer_order_page_info": "To complete your order, please enter the complete information below and press SEND ORDER button.",
@@ -145,5 +145,5 @@
     "adult": "Adult",
     "kid": "Kid",
     "baby": "Baby",
-    "undefined": ": Undefined"
+    "undefined": "Undefined"
 }

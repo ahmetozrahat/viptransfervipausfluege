@@ -75,9 +75,9 @@
     "person": "Personen",
     "transfer_person": "Person",
     "transfer_luggage": "Koffer",
-    "transfer_person_capacity": "<i class=\"fas fa-users vehicle-info-icon\"></i>Personenkapazität",
-    "transfer_luggage_capacity": "<i class=\"fas fa-suitcase vehicle-info-icon\"></i>Gepäckraum",
-    "transfer_duration": "<i class=\"fas fa-stopwatch vehicle-info-icon\"></i>Zeit",
+    "transfer_person_capacity": "Personenkapazität",
+    "transfer_luggage_capacity": "Gepäckraum",
+    "transfer_duration": "Zeit",
     "transfer_book_now": "RESERVIEREN",
     "transfer_order_title": "TRANSFERBESTELLUNG",
     "transfer_order_page_info": "Geben sie bitte ihre Date vollständig ein, um ihren Auftrag zu erledigen und klicken sie auf AUFTRAG ABSCHICKEN.",
@@ -145,5 +145,5 @@
     "adult": "Erwachsene",
     "kid": "Kind",
     "baby": "Baby",
-    "undefined": ": Undefiniert"
+    "undefined": "Undefiniert"
 }
