@@ -33,7 +33,7 @@
     <!-- Booking Section -->
     <div class="booking-section">
         <div id="booking-title" class="booking-title">{{ __('booking_section_title') }}</div>
-        <form action="transfer.php" method="POST">
+        <form action="{{route('transfer', app()->getLocale())}}" method="POST">
             @csrf
             <div class="container-fluid">
                 <div class="row">
@@ -197,6 +197,6 @@
     </div>
 @endsection
 @section('scripts')
-    <script src="js/bootstrap-input-spinner.js"></script>
+    <script src="{{ mix('js/bootstrap-input-spinner.js') }}"></script>
     <script src="{{ mix('js/app.js') }}"></script>
 @endsection
