@@ -14,7 +14,7 @@
     <div class="container-fluid vehicles-section">
         <div class="row">
             @foreach($eligibleTransfers as $transfer)
-                <form action="#" method="POST">
+                <form action="{{route('transfer-order', app()->getLocale())}}" method="POST">
                     @csrf
                     <input type="hidden" name="direction" value="{{$transfer['direction']}}">
                     <input type="hidden" name="airport" value="{{$transfer['airport']}}">
@@ -44,7 +44,7 @@
                                     </tr>
                                     <tr>
                                         <td class="vehicle-info-row-2"><i class="fas fa-suitcase vehicle-info-icon"></i>{{__('transfer_luggage_capacity')}}</td>
-                                        <td class="vehicle-info-baggage" id="vehicle-info-baggage">: {{$transfer['vehicle']->baggage_quantity}}</td>
+                                        <td class="vehicle-info-baggage" id="vehicle-info-baggage">: {{ trans_choice('baggage_count', $transfer['vehicle']->baggage_quantity, ['count' => $transfer['vehicle']->baggage_quantity])  }}</td>
                                     </tr>
                                     <tr>
                                         <td class="vehicle-info-row-3"><i class="fas fa-stopwatch vehicle-info-icon"></i>{{__('transfer_duration')}}</td>
