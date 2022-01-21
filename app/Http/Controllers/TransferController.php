@@ -47,7 +47,7 @@ class TransferController extends Controller
 
         $totalQuantity = $passengerAdultQuantity + $passengerKidQuantity + $passengerBabyQuantity;
 
-        $eligibleVehicles = [];
+        $eligibleTransfers = [];
 
         foreach ($vehicles as $vehicle) {
             foreach ($transferPrices as $transferPrice) {
@@ -56,12 +56,25 @@ class TransferController extends Controller
 
                 if ($vehicle->seat_quantity >= $totalQuantity) {
                     if ($seatQuantityMin <= $totalQuantity && $seatQuantityMax >= $totalQuantity) {
-                        $eligibleVehicles[] = $vehicle;
+                        $eligibleTransfers[] = [
+                            'direction' => $request->post('booking-transfer-direction'),
+                            'airport' => $request->post('booking-airport'),
+                            'airportName' => $request->post('airport-name'),
+                            'transferPoint' => $request->post('booking-transfer-point'),
+                            'transferPointName' => $request->post('transfer-point-name'),
+                            'adultQuantity' => $request->post('passenger-adult-quantity'),
+                            'kidQuantity' => $request->post('passenger-kid-quantity'),
+                            'babyQuantity' => $request->post('passenger-baby-quantity'),
+                            'babySeat' => $request->post('passenger-baby-seat'),
+                            'region' => $region,
+                            'vehicle' => $vehicle,
+                            'price' => $transferPrice->price
+                        ];
                     }
                 }
             }
         }
 
-        return view('pages.transfer', compact(['formData', 'eligibleVehicles']));
+        return view('pages.transfer', compact(['formData', 'eligibleTransfers']));
     }
 }
