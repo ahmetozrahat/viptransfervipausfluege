@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TransferController;
 use App\Models\Airport;
 use App\Models\TransferPoint;
 use Illuminate\Support\Facades\Route;
@@ -30,6 +31,8 @@ Route::group(['prefix' => '{language}'], function () {
     Route::get('/myorder', [MyOrderController::class, 'index'])->name('myorder');
 
     Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+
+    Route::post('/transfer', [TransferController::class, 'index'])->name('transfer');
 });
 
 Route::group(['prefix' => 'api/v1'], function (){
