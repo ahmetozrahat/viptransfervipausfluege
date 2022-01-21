@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Region extends Model
 {
@@ -15,4 +16,14 @@ class Region extends Model
      * @var string
      */
     protected $table = 'region_list';
+
+    /**
+     * Function for accessing the city from an Region model.
+     *
+     * @return HasOne City that related to Region
+     */
+    public function getCity(): HasOne
+    {
+        return $this->hasOne(City::class, 'id', 'city');
+    }
 }
