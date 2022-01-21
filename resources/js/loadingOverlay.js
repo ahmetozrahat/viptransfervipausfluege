@@ -247,7 +247,7 @@ let loadingOverlay;
             };
 
             //typeof cancelSpinnerCallee === 'undefined';
-            delete cancelSpinnerCallee;
+            //delete cancelSpinnerCallee;
             let obj = {
                 cancel: cancelSpinner,
                 activate: activateSpinner,
