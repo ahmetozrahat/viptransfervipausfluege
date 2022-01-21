@@ -145,5 +145,9 @@
     "adult": "Erwachsene",
     "kid": "Kind",
     "baby": "Baby",
-    "undefined": "Undefiniert"
+    "undefined": "Undefiniert",
+    "passenger_adult_count": "{1} :count Erwachsener|[2,*] :count Erwachsene",
+    "passenger_kid_count": "{1} :count Kind|[2,*] :count Kinder",
+    "passenger_baby_count": "{1} :count Baby|[2,*] :count Babys",
+    "baggage_count": ":count Koffer"
 }

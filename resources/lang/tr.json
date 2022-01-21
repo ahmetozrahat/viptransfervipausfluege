@@ -146,5 +146,9 @@
     "adult": "Yetişkin",
     "kid": "Çocuk",
     "baby": "Bebek",
-    "undefined": "Belirtilmemiş"
+    "undefined": "Belirtilmemiş",
+    "passenger_adult_count": ":count Yetişkin",
+    "passenger_kid_count": ":count Çocuk",
+    "passenger_baby_count": ":count Bebek",
+    "baggage_count": ":count Bavul"
 }
