@@ -1,5 +1,8 @@
 @extends('main')
 @section('content')
+    <meta name="_token" content="{{ csrf_token() }}" />
+    <meta name="airport-translation" content="{{ __('booking_section_col2') }}" />
+    <meta name="transfer-point-translation" content="{{ __('booking_section_col3') }}" />
     <!-- Carousel Section -->
     <div class="carousel-container">
         <h1 id="carousel-title" class="heading-text">{!! __('carousel_section_title') !!}</h1>
