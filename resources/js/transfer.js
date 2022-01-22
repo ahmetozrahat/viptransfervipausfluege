@@ -1,7 +1,4 @@
-import $ from "jquery"
-
 $(function () {
-
     setupCurrency();
 
     initMap();

@@ -1,7 +1,5 @@
 require('./bootstrap');
 
-import $ from "jquery";
-
 /**
  * Initialize the view objects with the proper names
  * in order to use them in functions with a meaningful way.

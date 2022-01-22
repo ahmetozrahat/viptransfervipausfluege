@@ -1,5 +1,3 @@
-import $ from "jquery";
-
 $(function () {
     $("#nav-link-home").attr('class', 'nav-link');
     $("#nav-link-aboutus").addClass('nav-link active');
