@@ -1,12 +1,23 @@
+/* Global Variables */
+
+/* Import Libraries */
+import 'js-loading-overlay';
+
+const apiURL = 'https://api.exchangerate-api.com/v4/latest/EUR';
+
+/* DOM Objects */
+
+const vehicleTransferPrice = $(".vehicle-transfer-price");
+
 $(function () {
-    setupCurrency();
+    retrieveCurrencyFromCookies();
 
-    initMap();
+/*    initMap();
 
-    calcRoute();
+    calcRoute();*/
 });
 
-// Loading the google maps.
+/*// Loading the google maps.
 function initMap() {
     let directionsService = new google.maps.DirectionsService();
     let directionsRenderer = new google.maps.DirectionsRenderer();
@@ -34,46 +45,133 @@ function calcRoute() {
             directionsRenderer.setDirections(result);
         }
     });
-}
+}*/
 
-function formatFields(multiplier, char) {
-    let price = (parseFloat($(".vehicle-transfer-price").html()) * multiplier).toFixed(2);
-    let sliced = price.split('.');
-    $(".vehicle-transfer-price").html(char + '<strong> ' + sliced[0] + '</strong><sup>.' + sliced[1] + '</sup>');
-}
+/**
+ * Function for retrieving the currency data from cookies.
+ */
+function retrieveCurrencyFromCookies() {
+    let cookies = document.cookie.split(';');
 
-function setupCurrency() {
-    $.ajax({
-        url: "v1/getCurrency.php",
-        type: "post",
-        success: function (response) {
-            if (response !== false && response !== undefined) {
-                let data = JSON.parse(response);
-
-                let tl = data[0]['tl'];
-                let usd = data[0]['usd'];
-
-                switch (currency) {
-                    case 'tl':
-                        formatFields(tl, '₺');
-                        break;
-                    case 'usd':
-                        formatFields(usd, '$');
-                        break;
-                    case 'eur':
-                        formatFields(1, '€');
-                        break;
-                    default:
-                        formatFields(1, '€');
-                        break;
-                }
+    cookies.forEach(element => {
+        if (element.includes('currency')) {
+            switch (element.split('=')[1]) {
+                case 'tl':
+                    // Load Turkish Lira's currency.
+                    convertPrices('tl');
+                    break;
+                case 'usd':
+                    // Load United States Dollars currency.
+                    convertPrices('usd');
+                    break;
+                case 'eur':
+                    // Load Euros currency.
+                    convertPrices('eur');
+                    break;
+                default:
+                    convertPrices('eur');
+                    break;
             }
+        }
+    });
+}
 
-            initMap();
-            calcRoute();
+/**
+ * Function for formatting the fields with
+ * 2 decimal places with a given currency.
+ *
+ * It will fetch the most recent rates from an api
+ * and convert it from EUR.
+ *
+ * @see https://api.exchangerate-api.com/v4/latest/EUR
+ * @param {String} currency tl, usd or eur
+ */
+function convertPrices(currency) {
+    showLoadingOverlay();
+    $.ajax({
+        type: 'GET',
+        url: apiURL,
+        success: function (data) {
+            hideLoadingOverlay();
+            const tl = data.rates.TRY;
+            const usd = data.rates.USD;
+
+            switch (currency) {
+                case 'tl':
+                    // Convert it to TRY if possible.
+                    // Fallback to EUR if not possible.
+                    if (tl !== undefined && tl !== null)
+                        formatFields(tl, '₺');
+                    else
+                        formatFields(1, '€');
+                    break;
+                case 'usd':
+                    // Convert it to USD if possible.
+                    // Fallback to EUR if not possible.
+                    if (usd !== undefined && usd !== null)
+                        formatFields(usd, '$');
+                    else
+                        formatFields(1, '€');
+                    break;
+                case 'eur':
+                    formatFields(1, '€');
+                    break;
+                default:
+                    formatFields(1, '€');
+                    break;
+            }
         },
-        error: function (jqXHR, textStatus, errorThrown) {
+        error: function (error) {
+            hideLoadingOverlay();
+            console.log(error);
             formatFields(1, '€');
         }
     });
+}
+
+/**
+ *
+ * Function for formatting the page with the given currency values.
+ * It will multiply the default Euro values with currency value against Euro.
+ * It will change the € symbol with the given char.
+ *
+ * @param {Number} multiplier Currency value against the default currency (Euro)
+ * @param {String} char Char for the currency that is going to be set.
+ */
+function formatFields(multiplier, char) {
+    let oldPrice = parseFloat(vehicleTransferPrice.attr('price'));
+    let newPrice = oldPrice * multiplier;
+    let priceString = newPrice.toFixed(2);
+    let sliced = priceString.split('.');
+    
+    vehicleTransferPrice.html(char + '<strong> ' + sliced[0] + '</strong><sup>.' + sliced[1] + '</sup>');
+}
+
+/**
+ * Function for showing a spinning wheel in the center
+ * on the screen, indicating that some works are in progress.
+ */
+function showLoadingOverlay() {
+    JsLoadingOverlay.show({
+        "overlayBackgroundColor": "#666666",
+        "overlayOpacity": "0.8",
+        "spinnerIcon": "ball-spin-clockwise",
+        "spinnerColor": "#78C4D4",
+        "spinnerSize": "3x",
+        "overlayIDName": "asd",
+        "spinnerIDName": "spinner",
+        "offsetX": 0,
+        "offsetY": 0,
+        "containerID": null,
+        "lockScroll": true,
+        "overlayZIndex": 9998,
+        "spinnerZIndex": 9999
+    });
+}
+
+/**
+ * Function for hiding the loading overlay.
+ */
+function hideLoadingOverlay() {
+    JsLoadingOverlay.hide();
 }
