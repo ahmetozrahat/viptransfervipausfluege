@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PhoneNumberController;
 use App\Http\Controllers\TransferController;
 use App\Http\Controllers\TransferOrderController;
 use App\Models\Airport;
@@ -54,4 +55,6 @@ Route::group(['prefix' => 'api/v1'], function (){
     Route::post('transfer-points', function () {
        return TransferPoint::all();
     });
+
+    Route::post('verify-phone', [PhoneNumberController::class, 'show']);
 });

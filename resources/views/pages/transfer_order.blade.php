@@ -1,5 +1,6 @@
 @extends('main')
 @section('content')
+    <meta name="_token" content="{{ csrf_token() }}" />
     <!-- Page Header Section -->
     <div class="page-header about-us">
         <div id="transfer-page-title" class="page-title" style="text-align: left;">
@@ -128,7 +129,7 @@
                         </div>
                         <div class="order-row single">
                             <label id="order-transfer-notes-label" for="order-transfer-notes" class="form-label">{{__('transfer_order_notes')}}</label>
-                            <textarea type="text" class="form-control" id="order-transfer-notes" name="transfer-notes" aria-describedby="transfer_notes" required></textarea>
+                            <textarea class="form-control" id="order-transfer-notes" name="transfer-notes" aria-describedby="transfer_notes" required></textarea>
                         </div>
                     </div>
 
@@ -208,7 +209,7 @@
                             </div>
                             <div class="order-row single">
                                 <label id="order-transfer-notes-label2" for="order-transfer-notes2" class="form-label">{{__('transfer_order_notes2')}}</label>
-                                <textarea type="text" class="form-control" id="order-transfer-notes2" name="transfer-notes2" aria-describedby="transfer_notes" required></textarea>
+                                <textarea class="form-control" id="order-transfer-notes2" name="transfer-notes2" aria-describedby="transfer_notes" required></textarea>
                             </div>
                         </div>
                     @endif
@@ -360,7 +361,7 @@
                         <li class="order-selection gray">
                             <i class="fas fa-wallet order-selection-icon"></i>
                             <div id="transfer-selections-price" class="order-selection-title">{{__('transfer_selections_price')}}</div>
-                            <div id="transfer-order-price" class="order-selection-text">{{$formData['price']}}</div>
+                            <div id="transfer-order-price" class="order-selection-text" price="{{$formData['price']}}"></div>
                         </li>
                         <li class="order-selection">
                             <input type="hidden" name="baby-seat" value="{{$formData['babySeat']}}">
@@ -378,13 +379,13 @@
                         <li class="order-selection">
                             <i class="fas fa-percentage order-selection-icon"></i>
                             <div id="transfer-selections-discount" class="order-selection-title">{{__('transfer_selections_discount')}}</div>
-                            <div id="transfer-order-discount" class="order-selection-text">0</div>
+                            <div id="transfer-order-discount" class="order-selection-text" price="0">0</div>
                         </li>
                         <li class="order-selection last">
                             <input type="hidden" name="price" value="{{$formData['price']}}">
                             <i class="fas fa-wallet order-selection-icon last"></i>
                             <div id="transfer-selections-final-amount" class="order-selection-title">{{__('transfer_selections_total')}}</div>
-                            <div id="transfer-order-total" class="order-selection-text last-price">{{$formData['price']}}</div>
+                            <div id="transfer-order-total" class="order-selection-text last-price" price="{{$formData['price']}}"></div>
                         </li>
                     </ul>
                 </div>
