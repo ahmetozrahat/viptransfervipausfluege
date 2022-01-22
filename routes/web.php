@@ -33,7 +33,15 @@ Route::group(['prefix' => '{language}'], function () {
 
     Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 
+    Route::get('/transfer', function () {
+        return redirect()->route('home', app()->getLocale());
+    });
+
     Route::post('/transfer', [TransferController::class, 'index'])->name('transfer');
+
+    Route::get('/transfer-order', function () {
+        return redirect()->route('home', app()->getLocale());
+    });
 
     Route::post('/transfer-order', [TransferOrderController::class, 'index'])->name('transfer-order');
 });
