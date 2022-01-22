@@ -40,7 +40,7 @@
                                     <tbody>
                                     <tr>
                                         <td class="vehicle-info-row-1"><i class="fas fa-users vehicle-info-icon"></i>{{__('transfer_person_capacity')}}</td>
-                                        <td>: 1- {{$transfer['vehicle']->seat_quantity}} <span class="vehicle-info-row-person">Kişi</span></td>
+                                        <td>: 1- {{$transfer['vehicle']->seat_quantity}} {{__('transfer_person')}}</td>
                                     </tr>
                                     <tr>
                                         <td class="vehicle-info-row-2"><i class="fas fa-suitcase vehicle-info-icon"></i>{{__('transfer_luggage_capacity')}}</td>
