@@ -4,10 +4,8 @@
     "/js/contact.js": "/js/contact.js",
     "/js/my_order.js": "/js/my_order.js",
     "/js/bootstrap-input-spinner.js": "/js/bootstrap-input-spinner.js",
-    "/js/jquery.toast.min.js": "/js/jquery.toast.min.js",
     "/js/transfer.js": "/js/transfer.js",
     "/js/transfer_order.js": "/js/transfer_order.js",
     "/js/currency.js": "/js/currency.js",
-    "/css/app.css": "/css/app.css",
-    "/css/jquery.toast.min.css": "/css/jquery.toast.min.css"
+    "/css/app.css": "/css/app.css"
 }
