@@ -25,15 +25,15 @@ class TransferController extends Controller
 
         $formData = $request->post();
 
-        $region = TransferPoint::where('id', $request->post('booking-transfer-point'))
+        $region = optional(TransferPoint::where('id', $request->post('booking-transfer-point'))
             ->get()
-            ->first()
+            ->first())
             ->id;
 
-        $transfer = Transfer::where('airport', $request->post('booking-airport'))
+        $transfer = optional(Transfer::where('airport', $request->post('booking-airport'))
             ->where('region', $region)
             ->get()
-            ->first()
+            ->first())
             ->id;
 
         $transferPrices = TransferPrice::where('transfer', $transfer)
