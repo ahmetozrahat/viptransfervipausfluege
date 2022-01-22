@@ -34,12 +34,14 @@
                         <div class="order-info">
                             <div class="order-row">
                                 <label id="order-personal-phone-label" for="order-personal-phone" class="form-label">{{__('transfer_order_phone')}}</label>
-                                <input type="tel" placeholder="+49 012 345 67 89" class="form-control" id="order-personal-phone" name="phone" aria-describedby="phone" required autocomplete="off">
+                                <input type="tel" class="form-control" id="order-personal-phone" name="phone" aria-describedby="phone" required autocomplete="off">
                             </div>
                             <div class="order-row">
                                 <label id="order-personal-country-label" for="order-personal-country" class="form-label">{{__('transfer_order_country')}}</label>
                                 <select class="form-control" id="order-personal-country" name="country" required>
-                                    {{--//@todo: laod country names --}}
+                                    @foreach($countries as $country)
+                                        <option value="{{$country->id}}">{{$country->country_name}}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
@@ -80,7 +82,9 @@
                                 <div class="order-row">
                                     <label id="order-flight-terminal-label" for="order-flight-terminal" class="form-label">{{__('transfer_order_terminal')}}</label>
                                     <select class="form-control" id="order-flight-terminal" name="terminal">
-                                        {{--//@todo: load terminals --}}
+                                        @foreach($terminals as $terminal)
+                                            <option value="{{$terminal->id}}">{{$terminal->name}}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
@@ -166,7 +170,9 @@
                                     <div class="order-row">
                                         <label id="order-flight-terminal-label2" for="order-flight-terminal2" class="form-label">{{__('transfer_order_terminal2')}}</label>
                                         <select class="form-control" id="order-flight-terminal2" name="terminal2">
-                                            {{--@todo: add terminal --}}
+                                            @foreach($terminals as $terminal)
+                                                <option value="{{$terminal->id}}">{{$terminal->name}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
@@ -387,4 +393,5 @@
     </form>
 @endsection
 @section('scripts')
+    <script src="{{mix('js/transfer_order.js')}}"></script>
 @endsection

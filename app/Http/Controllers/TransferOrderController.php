@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Country;
+use App\Models\Terminal;
 use Illuminate\Http\Request;
 
 class TransferOrderController extends Controller
@@ -24,7 +26,9 @@ class TransferOrderController extends Controller
         ]);
 
         $formData = $request->post();
+        $countries = Country::all();
+        $terminals = Terminal::all();
 
-        return view('pages.transfer_order', compact('formData'));
+        return view('pages.transfer_order', compact('formData', 'countries', 'terminals'));
     }
 }
