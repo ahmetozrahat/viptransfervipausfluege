@@ -213,3 +213,28 @@ function showLoadingOverlay() {
 function hideLoadingOverlay() {
     JsLoadingOverlay.hide();
 }
+
+function generateOrderID() {
+    let array = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z',
+    'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',1,2,3,4,5,6,7,8,9];
+    let orderId = '';
+
+    // Timestamp
+    let timestamp = Date.now().toString();
+
+    // First 4 digits
+    orderId += timestamp.slice(0,4);
+    orderId += '-'
+
+    // Middle 6 digits
+    for (let i = 0; i < 6; i++) {
+        let rand = Math.floor(Math.random() * array.length);
+        orderId += array[rand];
+    }
+    orderId += '-';
+
+    // Last 4 digits
+    orderId += timestamp.slice(9,13);
+
+    return orderId;
+}
