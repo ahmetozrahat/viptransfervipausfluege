@@ -383,6 +383,7 @@
                         </li>
                         <li class="order-selection last">
                             <input type="hidden" name="price" value="{{$formData['price']}}">
+                            <input type="hidden" id="order-converted-price" name="converted-price" value="">
                             <i class="fas fa-wallet order-selection-icon last"></i>
                             <div id="transfer-selections-final-amount" class="order-selection-title">{{__('transfer_selections_total')}}</div>
                             <div id="transfer-order-total" class="order-selection-text last-price" price="{{$formData['price']}}"></div>
