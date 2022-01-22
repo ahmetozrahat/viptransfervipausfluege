@@ -20,7 +20,7 @@ class OrderList extends Migration
             $table->string('email');
             $table->string('phone');
             $table->integer('country');
-            $table->tinyInteger('transfer_direction');
+            $table->tinyInteger('direction');
             $table->integer('airport');
             $table->integer('destination');
             $table->integer('passenger_quantity');
@@ -36,10 +36,13 @@ class OrderList extends Migration
             $table->timestamp('return_transfer_date')->nullable();
             $table->string('return_flight_no')->nullable();
             $table->integer('return_terminal')->nullable();
-            $table->string('return_transfer_point')->nullable();
+            $table->string('pickup_point')->nullable();
             $table->string('return_transfer_notes')->nullable();
-            $table->string('payment_method');
-            $table->float('price');
+            $table->float('original_price');
+            $table->string('converted_price');
+            $table->string('lang');
+            $table->string('currency');
+            $table->boolean('email_list_agreed');
             $table->timestamps();
         });
     }
