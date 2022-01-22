@@ -56,7 +56,7 @@
                         </div>
                         <div class="vehicle-book">
                             <div class="vehicle-book-items">
-                                <div class="vehicle-transfer-price">{{$transfer['price']}}</div>
+                                <div class="vehicle-transfer-price" price="{{$transfer['price']}}"></div>
                                 <button type="submit" class="btn btn-light vehicle-book-btn">{{__('transfer_book_now')}}</button>
                             </div>
                         </div>
