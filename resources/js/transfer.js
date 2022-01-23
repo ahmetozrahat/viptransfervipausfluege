@@ -2,6 +2,7 @@
 
 /* Import Libraries */
 import 'js-loading-overlay';
+import cookies from 'js-cookie';
 
 const apiURL = 'https://api.exchangerate-api.com/v4/latest/EUR';
 
@@ -51,29 +52,13 @@ function calcRoute() {
  * Function for retrieving the currency data from cookies.
  */
 function retrieveCurrencyFromCookies() {
-    let cookies = document.cookie.split(';');
-
-    cookies.forEach(element => {
-        if (element.includes('currency')) {
-            switch (element.split('=')[1]) {
-                case 'tl':
-                    // Load Turkish Lira's currency.
-                    convertPrices('tl');
-                    break;
-                case 'usd':
-                    // Load United States Dollars currency.
-                    convertPrices('usd');
-                    break;
-                case 'eur':
-                    // Load Euros currency.
-                    convertPrices('eur');
-                    break;
-                default:
-                    convertPrices('eur');
-                    break;
-            }
-        }
-    });
+    if (cookies.get('currency') !== undefined && cookies.get('currency') !== null) {
+        let currency = cookies.get('currency');
+        convertPrices(currency)
+    }else {
+        cookies.set('currency', 'eur');
+        convertPrices('eur');
+    }
 }
 
 /**
@@ -143,7 +128,7 @@ function formatFields(multiplier, char) {
     let newPrice = oldPrice * multiplier;
     let priceString = newPrice.toFixed(2);
     let sliced = priceString.split('.');
-    
+
     vehicleTransferPrice.html(char + '<strong> ' + sliced[0] + '</strong><sup>.' + sliced[1] + '</sup>');
 }
 
