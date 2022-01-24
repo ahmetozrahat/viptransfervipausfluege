@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md navbar-light bg-light">
     <div class="container-fluid nav-container">
-        <a class="navbar-brand" href="{{ route('home', app()->getLocale()) }}"><img src="../img/logo.png" alt=""
+        <a class="navbar-brand" href="{{ route('home', app()->getLocale()) }}"><img src="{{asset('img/logo.png')}}" alt=""
                 width="250" height="40"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
             aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
