@@ -2,12 +2,39 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\OrderPlaced;
 use App\Models\TransferOrder;
 use Illuminate\Http\Request;
+
+use Illuminate\Support\Facades\Mail;
 
 class CreateOrderController extends Controller
 {
     public function create(Request $request) {
+        /*        $validated = $request->validate([
+            'order_id' => ['string', 'min:12', 'max:12'],
+            'name' => ['string', 'max:255'],
+            'email' => ['string', 'max:255'],
+            'phone' => ['string', 'min:7', 'max:16'],
+            'country' =>
+        ]);*/
+
+        if ($this->createOrder($request)) {
+            // Row inserted successfully.
+            // Send Mail and SMS to both user and admins.
+            $order = TransferOrder::where('order_id', $request->post('order_id'))->get()->first();
+
+            Mail::to($request->post('email'))
+                ->locale($request->post('lang'))
+                ->send(new OrderPlaced($order));
+        }else {
+            return false;
+        }
+
+        return true;
+    }
+
+    private function createOrder(Request $request): Bool {
         $order = new TransferOrder;
 
         $order->order_id = $request->post('order_id');
@@ -39,8 +66,8 @@ class CreateOrderController extends Controller
         $order->currency = $request->post('currency');
         $order->email_list_agreed = $request->post('email_list_agreed') == true ? 1 : 0;
 
-        $order->save();
+        $result = $order->save();
 
-        return true;
+        return $result;
     }
 }
