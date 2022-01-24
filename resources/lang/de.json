@@ -155,6 +155,7 @@
     "mail_order_footer_2": "Brauchen Sie Hilfe? Kontaktieren Sie uns unter <a href='mailto:info@viptransfervipausfluege.com'>info@viptransfervipausfluege.com</a>.",
     "mail_order_placed": "Ihre Reservierung ist eingegangen.",
     "mail_order_id": "Bestellnummer: :id",
+    "mail_order_copy": "Eine Kopie der Bestelldaten wurde an <strong>:email</strong> gesendet. Danke, daß Sie uns gewählt haben.",
     "mail_thanks": "Danke, daß Sie uns gewählt haben",
     "mail_name": "Vorname Nachname",
     "mail_land_date": "Landungsdatum",

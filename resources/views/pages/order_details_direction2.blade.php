@@ -16,7 +16,7 @@
         <div id="order-success-title" class="order-success-title">{{__('mail_order_placed')}}</div>
         <div id="order-id" class="order-id">{{__('mail_order_id', ['id' => $order->order_id])}}</div>
         <div id="order-details" class="order-details">
-            Sipariş detaylarının bir nüshası <strong></strong> adresine gönderilmiştir. Bizi tercih ettiğiniz için teşekkür ederiz.
+            {!! __('mail_order_copy', ['email' => $order->email]) !!}
         </div>
         <div class="order-details-table-section">
             <input id="transfer-direction-value" type="hidden" value=""/>

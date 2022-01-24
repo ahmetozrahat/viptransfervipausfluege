@@ -156,6 +156,7 @@
     "mail_order_footer_2": "Yardıma mı ihtiyacınız var? <a href='mailto:info@viptransfervipausfluege.com'>info@viptransfervipausfluege.com</a> adresinden bize ulaşın.",
     "mail_order_placed": "Siparişiniz Alındı",
     "mail_order_id": "Sipariş Numarası: :id",
+    "mail_order_copy": "Sipariş detaylarının bir nüshası <strong>:email</strong> adresine gönderilmiştir. Bizi tercih ettiğiniz için teşekkür ederiz.",
     "mail_thanks": "Bizi tercih ettiğiniz için teşekkürler.",
     "mail_name": "Ad Soyad",
     "mail_land_date": "İniş Tarihi",

@@ -155,6 +155,7 @@
     "mail_order_footer_2": "Do you need help? Contact us at <a href='mailto:info@viptransfervipausfluege.com'>info@viptransfervipausfluege.com</a>.",
     "mail_order_placed": "Your order has been received.",
     "mail_order_id": "Order Number: :id",
+    "mail_order_copy": "A copy of the order details has been sent to <strong>:email</strong>. Thank you for choosing us.",
     "mail_thanks": "Thank you for choosing us.",
     "mail_name": "Name Lastname",
     "mail_land_date": "Land Date",
