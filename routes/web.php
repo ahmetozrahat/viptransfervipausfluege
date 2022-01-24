@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CreateOrderController;
+use App\Http\Controllers\OrderDetailsController;
 use App\Http\Controllers\PhoneNumberController;
 use App\Http\Controllers\TransferController;
 use App\Http\Controllers\TransferOrderController;
@@ -45,6 +47,8 @@ Route::group(['prefix' => '{language}'], function () {
     });
 
     Route::post('/transfer-order', [TransferOrderController::class, 'index'])->name('transfer-order');
+
+    Route::get('order-details/{order}', [OrderDetailsController::class, 'index'])->name('order-details');
 });
 
 Route::group(['prefix' => 'api/v1'], function (){
@@ -58,5 +62,5 @@ Route::group(['prefix' => 'api/v1'], function (){
 
     Route::post('verify-phone', [PhoneNumberController::class, 'show']);
 
-    Route::post('create-order', [\App\Http\Controllers\CreateOrderController::class, 'create']);
+    Route::post('create-order', [CreateOrderController::class, 'create']);
 });
