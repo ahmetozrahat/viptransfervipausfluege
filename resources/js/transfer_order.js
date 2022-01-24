@@ -3,6 +3,7 @@
 /* Import Libraries */
 import Litepicker from 'litepicker';
 import intlTelInput from 'intl-tel-input';
+import cookies from "js-cookie";
 import 'js-loading-overlay';
 import 'toastr';
 
@@ -24,19 +25,15 @@ const apiURL = 'https://api.exchangerate-api.com/v4/latest/EUR';
 
 /* DOM elements */
 
-const orderFlightDate = $('#order-flight-date');
 const orderFlightHour = $('#order-flight-hour');
 const orderFlightMinute = $('#order-flight-minute');
 
-const orderReturnFlightDate = $('#order-flight-date2');
 const orderReturnFlightHour = $('#order-flight-hour2');
 const orderReturnFlightMinute = $('#order-flight-minute2');
 
-const orderTransferDate = $('#order-transfer-date');
 const orderTransferHour = $('#order-transfer-hour');
 const orderTransferMinute = $('#order-transfer-minute');
 
-const orderReturnTransferDate = $('#order-transfer-date2');
 const orderReturnTransferHour = $('#order-transfer-hour2');
 const orderReturnTransferMinute = $('#order-transfer-minute2');
 
@@ -240,28 +237,13 @@ function setupPhoneInputFormatter() {
  * @return {String} Currency string tl, usd, eur
  */
 function retrieveCurrencyFromCookies(callback) {
-    let cookies = document.cookie.split(';');
-
-    cookies.forEach(element => {
-        if (element.includes('currency')) {
-            switch (element.split('=')[1]) {
-                case 'tl':
-                    // Load Turkish Lira's currency.
-                    callback('tl');
-                    break;
-                case 'usd':
-                    // Load United States Dollars currency.
-                    callback('usd');
-                    break;
-                case 'eur':
-                    // Load Euros currency.
-                    callback('eur');
-                    break;
-                default:
-                    callback('eur');
-            }
-        }
-    });
+    if (cookies.get('currency') !== undefined && cookies.get('currency') !== null) {
+        let currency = cookies.get('currency');
+        callback(currency);
+    }else {
+        cookies.set('currency', 'eur');
+        callback('eur');
+    }
 }
 
 /**
@@ -449,21 +431,21 @@ function setupClickListeners() {
             name: formData.get('name'),
             email: formData.get('email'),
             phone: iti.getNumber(),
-            country: parseInt(formData.get('country')),
+            country: ~~formData.get('country'),
             flight_no: formData.get('flight-no'),
-            terminal: parseInt(formData.get('terminal')),
+            terminal: ~~formData.get('terminal') === 0 ? null : ~~formData.get('terminal'),
             transfer_point: formData.get('transfer-point'),
             transfer_notes: formData.get('transfer-notes'),
             return_flight_no: formData.get('flight-no2'),
-            return_terminal: parseInt(formData.get('terminal2')),
+            return_terminal: ~~formData.get('terminal2') === 0 ? null : ~~formData.get('terminal2'),
             pickup_point: formData.get('transfer-point2'),
             return_transfer_notes: formData.get('transfer-notes2'),
-            airport: parseInt(formData.get('airport')),
-            destination: parseInt(formData.get('destination')),
-            direction: parseInt(formData.get('direction')),
-            passengers: parseInt(formData.get('passengers')),
-            baby_seat: parseInt(formData.get('baby-seat')),
-            vehicle: parseInt(formData.get('vehicle')),
+            airport: ~~formData.get('airport'),
+            destination: ~~formData.get('destination'),
+            direction: ~~formData.get('direction'),
+            passengers: ~~formData.get('passengers'),
+            baby_seat: ~~formData.get('baby-seat'),
+            vehicle: ~~formData.get('vehicle'),
             original_price: parseFloat(formData.get('price')),
             converted_price: parseFloat($('#order-converted-price').val()),
             email_list_agreed: $('#order-agreement-checkbox2').prop('checked'),
@@ -633,15 +615,17 @@ function createOrder(data) {
                 data.return_transfer_date = returnTransferDateString;
             }
 
+            console.table(data);
+
             $.ajax({
                 type: 'POST',
                 url: '/api/v1/create-order',
                 data: data,
-                success: function (data) {
-                    console.log(data);
+                success: function (value) {
+                    window.location.href = 'order-details/' + data.order_id;
                 },
                 error: function (error) {
-                    console.log(error);
+                    toastr('Siparişiniz alınırken bir hata oluştu. Lütfen daha sonra tekrar deneyiniz.');
                 }
             });
         }else {
