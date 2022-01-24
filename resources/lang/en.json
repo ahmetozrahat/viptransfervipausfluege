@@ -149,5 +149,20 @@
     "passenger_adult_count": "{1} :count Adult|[2,*] :count Adults",
     "passenger_kid_count": "{1} :count Kid|[2,*] :count Kids",
     "passenger_baby_count": "{1} :count Baby|[2,*] :count Babies",
-    "baggage_count": "{1} :count Suitcase|[2,*] :count Suitcases"
+    "baggage_count": "{1} :count Suitcase|[2,*] :count Suitcases",
+    "mail_order_subject": "Order Details",
+    "mail_order_footer_1": "This e-mail was automatically sent to <a href='mailto::email'>:email</a>.",
+    "mail_order_footer_2": "Do you need help? Contact us at <a href='mailto:info@viptransfervipausfluege.com'>info@viptransfervipausfluege.com</a>.",
+    "mail_order_placed": "Your order has been received.",
+    "mail_order_id": "Order Number: :id",
+    "mail_thanks": "Thank you for choosing us.",
+    "mail_name": "Name Lastname",
+    "mail_land_date": "Land Date",
+    "mail_transfer_point": "Transfer Point",
+    "mail_flight_no": "Flight No",
+    "mail_terminal": "Terminal",
+    "mail_transfer_notes": "Notes",
+    "mail_payment_method": "Payment Method",
+    "mail_default_payment_method": "Cash to the Driver",
+    "mail_transfer_price": "Transfer Price"
 }

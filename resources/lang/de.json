@@ -149,5 +149,20 @@
     "passenger_adult_count": "{1} :count Erwachsener|[2,*] :count Erwachsene",
     "passenger_kid_count": "{1} :count Kind|[2,*] :count Kinder",
     "passenger_baby_count": "{1} :count Baby|[2,*] :count Babys",
-    "baggage_count": ":count Koffer"
+    "baggage_count": ":count Koffer",
+    "mail_order_subject": "Bestelldetails",
+    "mail_order_footer_1": "Diese E-Mail wurde automatisch an <a href='mailto::email'>:email</a> gesendet.",
+    "mail_order_footer_2": "Brauchen Sie Hilfe? Kontaktieren Sie uns unter <a href='mailto:info@viptransfervipausfluege.com'>info@viptransfervipausfluege.com</a>.",
+    "mail_order_placed": "Ihre Reservierung ist eingegangen.",
+    "mail_order_id": "Bestellnummer: :id",
+    "mail_thanks": "Danke, daß Sie uns gewählt haben",
+    "mail_name": "Vorname Nachname",
+    "mail_land_date": "Landungsdatum",
+    "mail_transfer_point": "Ankunftsziel",
+    "mail_flight_no": "Flugnummer",
+    "mail_terminal": "Terminal",
+    "mail_transfer_notes": "Anmerkungen",
+    "mail_payment_method": "Bezahlverfahren",
+    "mail_default_payment_method": "Bar an den Fahrer",
+    "mail_transfer_price": "Transfer Preis"
 }
