@@ -160,6 +160,7 @@
     "mail_thanks": "Bizi tercih ettiğiniz için teşekkürler.",
     "mail_name": "Ad Soyad",
     "mail_land_date": "İniş Tarihi",
+    "mail_transfer_date": "Transfer Tarihi",
     "mail_transfer_point": "Transfer Noktası",
     "mail_flight_no": "Uçuş Numarası",
     "mail_terminal": "Terminal",

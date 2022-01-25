@@ -31,6 +31,10 @@
                     <td class="order-details-right-col">{{date('d.m.Y G:i:s', strtotime($order->flight_date))}}</td>
                 </tr>
                 <tr class="order-details-row">
+                    <td id="order-details-transfer-date" class="order-details-left-col">{{__('mail_transfer_date')}}</td>
+                    <td class="order-details-right-col">{{date('d.m.Y G:i:s', strtotime($order->transfer_date))}}</td>
+                </tr>
+                <tr class="order-details-row">
                     <td id="order-details-transfer-point" class="order-details-left-col">{{__('mail_transfer_point')}}</td>
                     <td class="order-details-right-col">{{$order->transfer_point}}</td>
                 </tr>
@@ -71,5 +75,4 @@
             </table>
         </div>
     </div>
-
 @endsection

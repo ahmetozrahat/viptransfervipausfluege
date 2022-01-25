@@ -361,6 +361,18 @@ function setupClickListeners() {
         landDate.minute = parseInt($(this).val());
     });
 
+    // Click listener for transfer hour.
+    orderTransferHour.on('change', function () {
+        // Setting the hours and minutes to the landDate variable.
+        transferDate.hour = parseInt($(this).val());
+    });
+
+    // Click listener for transfer minute.
+    orderTransferMinute.on('change', function () {
+        // Setting the hours and minutes to the landDate variable.
+        transferDate.minute = parseInt($(this).val());
+    });
+
     // If the order is two ways, there will be a coming date and returning date.
     // We should listen for the click events for return date input fields.
     if (document.getElementById('order-flight-date2') !== null && document.getElementById('order-flight-date2') !== undefined) {

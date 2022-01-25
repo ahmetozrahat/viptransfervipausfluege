@@ -159,6 +159,7 @@
     "mail_thanks": "Danke, daß Sie uns gewählt haben",
     "mail_name": "Vorname Nachname",
     "mail_land_date": "Landungsdatum",
+    "mail_transfer_date": "Überweisungsdatum",
     "mail_transfer_point": "Ankunftsziel",
     "mail_flight_no": "Flugnummer",
     "mail_terminal": "Terminal",

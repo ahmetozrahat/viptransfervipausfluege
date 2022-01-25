@@ -159,6 +159,7 @@
     "mail_thanks": "Thank you for choosing us.",
     "mail_name": "Name Lastname",
     "mail_land_date": "Land Date",
+    "mail_transfer_date": "Transfer Date",
     "mail_transfer_point": "Transfer Point",
     "mail_flight_no": "Flight No",
     "mail_terminal": "Terminal",
