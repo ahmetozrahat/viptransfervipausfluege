@@ -637,7 +637,7 @@ function createOrder(data) {
                     window.location.href = 'order-details/' + data.order_id;
                 },
                 error: function (error) {
-                    toastr('Siparişiniz alınırken bir hata oluştu. Lütfen daha sonra tekrar deneyiniz.');
+                    toastr.error('Siparişiniz alınırken bir hata oluştu. Lütfen daha sonra tekrar deneyiniz.');
                 }
             });
         }else {
