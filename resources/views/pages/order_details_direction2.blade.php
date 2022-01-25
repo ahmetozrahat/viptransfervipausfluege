@@ -9,9 +9,6 @@
 
     <!-- Order Details Section -->
     <div class="order-details">
-        <input type="hidden" name="order-id" id="order-id-input" value="">
-        <input type="hidden" name="order-email" id="order-email-input" value="">
-
         <i class="fas fa-check-circle order-success"></i>
         <div id="order-success-title" class="order-success-title">{{__('mail_order_placed')}}</div>
         <div id="order-id" class="order-id">{{__('mail_order_id', ['id' => $order->order_id])}}</div>

@@ -26,4 +26,14 @@ class TransferOrder extends Model
     {
         return $this->hasOne(Terminal::class, 'id', 'terminal');
     }
+
+    /**
+     * Function for accessing the return terminal from a TransferOrder model.
+     *
+     * @return HasOne Return terminal that related to TransferOrder
+     */
+    public function getReturnTerminal(): HasOne
+    {
+        return $this->hasOne(Terminal::class, 'id', 'return_terminal');
+    }
 }

@@ -166,5 +166,13 @@
     "mail_transfer_notes": "Notes",
     "mail_payment_method": "Payment Method",
     "mail_default_payment_method": "Cash to the Driver",
-    "mail_transfer_price": "Transfer Price"
+    "mail_transfer_price": "Transfer Price",
+    "mail_return_flight_date": "Flight Date",
+    "mail_return_transfer_date": "Transfer Date",
+    "mail_return_transfer_point":  "Transfer Point",
+    "mail_return_flight_no": "Flight No",
+    "mail_return_terminal": "Terminal",
+    "mail_return_transfer_notes": "Notes",
+    "mail_arrival_info": "Arrival Information",
+    "mail_return_info": "Return Information"
 }

@@ -166,5 +166,13 @@
     "mail_transfer_notes": "Anmerkungen",
     "mail_payment_method": "Bezahlverfahren",
     "mail_default_payment_method": "Bar an den Fahrer",
-    "mail_transfer_price": "Transfer Preis"
+    "mail_transfer_price": "Transfer Preis",
+    "mail_return_flight_date": "Abreisedatum",
+    "mail_return_transfer_date": "Überweisungsdatum",
+    "mail_return_transfer_point":  "Übergabepunkt",
+    "mail_return_flight_no": "Flight No",
+    "mail_return_terminal": "Terminal",
+    "mail_return_transfer_notes": "Anmerkungen",
+    "mail_arrival_info": "Ankunfts Details",
+    "mail_return_info": "Abreise Details"
 }

@@ -167,5 +167,13 @@
     "mail_transfer_notes": "Notlar",
     "mail_payment_method": "Ödeme Yöntemi",
     "mail_default_payment_method": "Sürücüye Nakit",
-    "mail_transfer_price": "Transfer Ücreti"
+    "mail_transfer_price": "Transfer Ücreti",
+    "mail_return_flight_date": "Kalkış Tarihi",
+    "mail_return_transfer_date": "Transfer Tarihi",
+    "mail_return_transfer_point":  "Transfer Noktası",
+    "mail_return_flight_no": "Uçuş No",
+    "mail_return_terminal": "Terminal",
+    "mail_return_transfer_notes": "Notlar",
+    "mail_arrival_info": "Geliş Bilgileriniz",
+    "mail_return_info": "Dönüş Bilgileriniz"
 }
