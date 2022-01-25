@@ -25,4 +25,19 @@ class OrderDetailsController extends Controller
         }
         return view('pages.order_details_not_found');
     }
+
+    public function check(Request $request) {
+        $order_id = $request->post('order_id');
+        $email = $request->post('email');
+
+        $order = TransferOrder::where('order_id', $order_id)
+            ->where('email', $email)
+            ->get()
+            ->first();
+
+        if ($order != null)
+            return true;
+
+        return false;
+    }
 }

@@ -1,169 +1,99 @@
+/* Global Variables */
+
+/* Import Libraries */
+import 'toastr';
+import 'js-loading-overlay';
+
+/* DOM Models */
+const form = $('#myorder-form');
+
+const orderIdInput = $('#myorder-input1');
+const emailInput = $('#myorder-input2');
+
 $(function () {
-    $("#nav-link-home").attr('class', 'nav-link');
-    $("#nav-link-orders").addClass('nav-link active');
+    setupNavbar();
 
-    $('#myorder-form').submit(function (e) {
-        e.preventDefault();
-
-        let formData = new FormData(this);
-
-        $.ajax({
-            url: "v1/getOrderFromIdEmail.php",
-            data: formData,
-            type: "post",
-            success: function (response) {
-                if (response !== false && response !== undefined) {
-                    let json = $.parseJSON(response);
-
-                    if (json.error === true) {
-                        console.log(json.error);
-                        $.toast({
-                            heading: 'Error',
-                            text: json.message,
-                            showHideTransition: 'fade',
-                            bgColor: '#FF0033',
-                            textColor: '#fff',
-                            allowToastClose: true,
-                            hideAfter: 5000,
-                            stack: 5,
-                            textAlign: 'left',
-                            position: 'top-right',
-                            icon: 'error',
-                            loader: false
-                        });
-                    } else {
-                        let order = json.order[0];
-
-                        const newFormData = new FormData();
-                        newFormData.set('id', order.id);
-
-                        switch (order.direction) {
-                            case 1:
-                                // Two ways
-                                getOrderWithTwoWays(newFormData);
-                                break;
-                            case 2:
-                                // Default
-                                getOrder(newFormData);
-                                break;
-                            case 3:
-                                // With return
-                                getOrderWithReturn(newFormData);
-                                break;
-                        }
-                    }
-                }
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-                console.log(textStatus, errorThrown);
-            },
-            cache: false,
-            contentType: false,
-            processData: false
-        });
-    })
+    setupClickListeners();
 });
 
-function getOrder(id) {
-    $.ajax({
-        url: "v1/getOrderFromId.php",
-        data: id,
-        type: "post",
-        success: function (response) {
-            if (response !== false && response !== undefined) {
-                let json = $.parseJSON(response);
+/**
+ * Function for coloring the "My Order" tab of the navbar.
+ */
+function setupNavbar() {
+    $("#nav-link-home").attr('class', 'nav-link');
+    $("#nav-link-orders").addClass('nav-link active');
+}
 
-                let order = json['order'][0];
+/**
+ * Function for setting up click listeners for DOM objects.
+ */
+function setupClickListeners() {
+    form.submit(function (e) {
+        e.preventDefault();
 
-                if (json['error'] != true) {
-                    post('orderReceived.php', order);
-                } else {
-                    console.log(json);
-                }
-            }
-        },
-        error: function (jqXHR, textStatus, errorThrown) {
-            console.log(textStatus, errorThrown);
-        },
-        cache: false,
-        contentType: false,
-        processData: false
+        const data = {
+            order_id: orderIdInput.val(),
+            email: emailInput.val(),
+            _token: $('meta[name=_token]').attr('content')
+        }
+
+        getOrder(data);
     });
 }
 
-function getOrderWithReturn(id) {
+/**
+ * Function for getting the relevant order from the database
+ * with the given order_id and email address.
+ *
+ * @param {Object} orderData
+ */
+function getOrder(orderData) {
+    showLoadingOverlay();
     $.ajax({
-        url: "v1/getOrderFromIdWithReturn.php",
-        data: id,
-        type: "post",
-        success: function (response) {
-            if (response !== false && response !== undefined) {
-                let json = $.parseJSON(response);
-
-                let order = json['order'][0];
-
-                if (json['error'] != true) {
-                    post('orderReceivedWithReturn.php', order);
-                } else {
-                    console.log(json);
-                }
+        type: 'POST',
+        url: '/api/v1/order-details',
+        data: orderData,
+        success: function (data) {
+            hideLoadingOverlay();
+            if (data){
+                window.location.href = 'order-details/' + orderData.order_id;
+            }else {
+                toastr.error('Bu bilgilere ait bir sipariş bulunamadı.');
             }
         },
-        error: function (jqXHR, textStatus, errorThrown) {
-            console.log(textStatus, errorThrown);
-        },
-        cache: false,
-        contentType: false,
-        processData: false
+        error: function (error) {
+            hideLoadingOverlay();
+            console.log(error);
+            toastr.error('Bu bilgilere ait bir sipariş bulunamadı.');
+        }
     });
 }
 
-function getOrderWithTwoWays(id) {
-    $.ajax({
-        url: "v1/getOrderFromIdWithTwoWays.php",
-        data: id,
-        type: "post",
-        success: function (response) {
-            if (response !== false && response !== undefined) {
-                let json = $.parseJSON(response);
-
-                let order = json['order'][0];
-
-                if (json['error'] != true) {
-                    post('orderReceivedWithTwoWays.php', order);
-                } else {
-                    console.log(json);
-                }
-            }
-        },
-        error: function (jqXHR, textStatus, errorThrown) {
-            console.log(textStatus, errorThrown);
-        },
-        cache: false,
-        contentType: false,
-        processData: false
+/**
+ * Function for showing a spinning wheel in the center
+ * on the screen, indicating that some works are in progress.
+ */
+function showLoadingOverlay() {
+    JsLoadingOverlay.show({
+        "overlayBackgroundColor": "#666666",
+        "overlayOpacity": "0.8",
+        "spinnerIcon": "ball-spin-clockwise",
+        "spinnerColor": "#78C4D4",
+        "spinnerSize": "3x",
+        "overlayIDName": "asd",
+        "spinnerIDName": "spinner",
+        "offsetX": 0,
+        "offsetY": 0,
+        "containerID": null,
+        "lockScroll": true,
+        "overlayZIndex": 9998,
+        "spinnerZIndex": 9999
     });
 }
 
-// Post to the provided URL with the specified parameters.
-function post(path, parameters) {
-    var form = $('<form></form>');
-
-    form.attr("method", "post");
-    form.attr("action", path);
-
-    $.each(parameters, function (key, value) {
-        var field = $('<input></input>');
-
-        field.attr("type", "hidden");
-        field.attr("name", key);
-        field.attr("value", value);
-
-        form.append(field);
-    });
-
-    // The form needs to be a part of the document in
-    // order for us to be able to submit it.
-    $(document.body).append(form);
-    form.submit();
+/**
+ * Function for hiding the loading overlay.
+ */
+function hideLoadingOverlay() {
+    JsLoadingOverlay.hide();
 }

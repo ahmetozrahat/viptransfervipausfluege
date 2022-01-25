@@ -63,4 +63,6 @@ Route::group(['prefix' => 'api/v1'], function (){
     Route::post('verify-phone', [PhoneNumberController::class, 'show']);
 
     Route::post('create-order', [CreateOrderController::class, 'create']);
+
+    Route::post('order-details', [OrderDetailsController::class, 'check'])->name('check-order-details');
 });

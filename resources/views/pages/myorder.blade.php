@@ -1,5 +1,6 @@
 @extends('main')
 @section('content')
+    <meta name="_token" content="{{ csrf_token() }}" />
     <!-- Page Header Section -->
     <div class="page-header about-us">
         <div id="myorder-page-title" class="page-title">
@@ -43,5 +44,5 @@
 @endsection
 @section('scripts')
     <script src="{{ mix('js/my_order.js') }}"></script>
-    <script src="{{ mix('js/jquery.toast.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 @endsection
