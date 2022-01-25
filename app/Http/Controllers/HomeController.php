@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ContactInfo;
 use Illuminate\Http\Request;
 
 use App\Models\MainSlider;
@@ -13,7 +14,8 @@ class HomeController extends Controller
     {
         $mainSlider = MainSlider::all();
         $userReviews = UserReview::all();
+        $contact = ContactInfo::all()->first();
 
-        return view('pages.home', compact(['mainSlider', 'userReviews']));
+        return view('pages.home', compact(['mainSlider', 'userReviews', 'contact']));
     }
 }

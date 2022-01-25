@@ -6,8 +6,8 @@
                 <div id="footer-section-text1" class="footer-section desc footer-block">
                     {{ __('footer_section_text1') }}
                 </div>
-                <a class="fab fa-facebook-f footer-icn" href="#" target="_blank"></a>
-                <a class="fab fa-instagram footer-icn" href="#" target="_blank"></a>
+                <a class="fab fa-facebook-f footer-icn" href="{{$contact->facebook}}" target="_blank"></a>
+                <a class="fab fa-instagram footer-icn" href="{{$contact->instagram}}" target="_blank"></a>
             </div>
             <div class="col-md-6 footer-col">
                 <div id="footer-section-title2" class="footer-section title">{{ __('footer_section_title2') }}</div>
@@ -78,16 +78,16 @@
                     <div class="footer-contact-item">
                         <div class="footer-contact-item">
                             <i class="fas fa-phone footer-icn-small"></i>
-                            <a class="footer-list-item" href="tel:+905437364400">T: 90 543 736 44 00</a>
+                            <a class="footer-list-item" href="tel:{{$contact->company_phone}}">T: {{$contact->company_phone}}</a>
                         </div>
                         <div class=" footer-contact-item">
                             <i class="fas fa-envelope footer-icn-small"></i>
-                            <a class="footer-list-item" href="mailto:info@viptransfervipausfluege.com">E:
-                                info@viptransfervipausfluege.com</a>
+                            <a class="footer-list-item" href="mailto:{{$contact->company_email}}">E:
+                                {{$contact->company_email}}</a>
                         </div>
                         <div class="footer-contact-item">
                             <i class="fas fa-map-marker-alt footer-icn-small"></i>
-                            <a class="footer-list-item" href="#" target="_blank">Adres</a>
+                            <a class="footer-list-item" href="#" target="_blank">{{$contact->company_address}}</a>
                         </div>
                     </div>
                 </div>
@@ -108,6 +108,6 @@
 </div>
 
 <!-- Floating WhatsApp Button -->
-<a href="https://api.whatsapp.com/send?phone=+905441700738&text=Merhaba!" class="float" target="_blank">
+<a href="https://api.whatsapp.com/send?phone={{$contact->company_phone}}&text=Merhaba!" class="float" target="_blank">
     <i class="fa fa-whatsapp my-float"></i>
 </a>

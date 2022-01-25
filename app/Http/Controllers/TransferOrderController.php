@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ContactInfo;
 use App\Models\Country;
 use App\Models\Terminal;
 use Illuminate\Http\Request;
@@ -29,6 +30,7 @@ class TransferOrderController extends Controller
         $countries = Country::all();
         $terminals = Terminal::all();
 
-        return view('pages.transfer_order', compact('formData', 'countries', 'terminals'));
+        $contact = ContactInfo::all()->first();
+        return view('pages.transfer_order', compact('formData', 'countries', 'terminals', 'contact'));
     }
 }

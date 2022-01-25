@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ContactInfo;
 use App\Models\Transfer;
 use App\Models\TransferPoint;
 use App\Models\TransferPrice;
@@ -75,6 +76,7 @@ class TransferController extends Controller
             }
         }
 
-        return view('pages.transfer', compact(['formData', 'eligibleTransfers']));
+        $contact = ContactInfo::all()->first();
+        return view('pages.transfer', compact(['formData', 'eligibleTransfers', 'contact']));
     }
 }
