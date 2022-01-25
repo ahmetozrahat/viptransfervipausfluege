@@ -18,7 +18,15 @@
         </h1>
         <hr class="mt-2 mb-5">
         <div class="row text-center text-lg-start">
-            <!-- Add photo logic -->
+            @foreach($gallery as $photo)
+                @if($photo->is_active)
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <a href="{{asset('gallery/' . $photo->image)}}" class="d-block mb-4 h-100" data-fancybox>
+                            <img class="img-fluid img-thumbnail" src="{{asset('gallery/' . $photo->image)}}" alt="">
+                        </a>
+                    </div>
+                @endif
+            @endforeach
         </div>
     </div>
 @endsection
