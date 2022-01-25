@@ -49,16 +49,32 @@
                     </div>
                     <div class="order-left-flight">
                         <div id="order-flight-title" class="order-title">
-                            {{__('transfer_order_flight_info')}}
+                            @if($formData['direction'] == 3)
+                                {{__('transfer_order_flight_info2')}}
+                            @else
+                                {{__('transfer_order_flight_info')}}
+                            @endif
                         </div>
                         <div class="order-info">
                             <div class="order-row">
                                 <div class="order-row">
-                                    <label id="order-flight-date-label" for="order-flight-date" class="form-label">{{__('transfer_order_flight_date')}}</label>
+                                    <label id="order-flight-date-label" for="order-flight-date" class="form-label">
+                                        @if($formData['direction'] == 3)
+                                            {{__('transfer_order_flight_date2')}}
+                                        @else
+                                            {{__('transfer_order_flight_date')}}
+                                        @endif
+                                    </label>
                                     <input type="text" class="form-control" id="order-flight-date" name="flight-date" aria-describedby="flight_date" required autocomplete="off">
                                 </div>
                                 <div class="order-row">
-                                    <label id="order-flight-time-label" class="form-label alone">{{__('transfer_order_flight_time')}}</label>
+                                    <label id="order-flight-time-label" class="form-label alone">
+                                        @if($formData['direction'] == 3)
+                                            {{__('transfer_order_flight_time2')}}
+                                        @else
+                                            {{__('transfer_order_flight_time')}}
+                                        @endif
+                                    </label>
                                     <div class="order-row">
                                         <select class="form-control" name="flight-hour" id="order-flight-hour" required>
                                             @for ($i = 0; $i < 24; $i++)
@@ -117,7 +133,13 @@
                                     </div>
                                 </div>
                                 <div class="order-row">
-                                    <label id="order-transfer-point-label" for="order-transfer-point" class="form-label">{{__('transfer_order_transfer_point')}}</label>
+                                    <label id="order-transfer-point-label" for="order-transfer-point" class="form-label">
+                                        @if($formData['direction'] == 3)
+                                            {{__('transfer_order_transfer_point2')}}
+                                        @else
+                                            {{__('transfer_order_transfer_point')}}
+                                        @endif
+                                    </label>
                                     <input type="text" class="form-control" id="order-transfer-point" name="transfer-point" aria-describedby="transfer_point" required>
                                 </div>
                             @else
@@ -128,7 +150,13 @@
                             @endif
                         </div>
                         <div class="order-row single">
-                            <label id="order-transfer-notes-label" for="order-transfer-notes" class="form-label">{{__('transfer_order_notes')}}</label>
+                            <label id="order-transfer-notes-label" for="order-transfer-notes" class="form-label">
+                                @if($formData['direction'] == 3)
+                                    {{__('transfer_order_notes2')}}
+                                @else
+                                    {{__('transfer_order_notes')}}
+                                @endif
+                            </label>
                             <textarea class="form-control" id="order-transfer-notes" name="transfer-notes" aria-describedby="transfer_notes" required></textarea>
                         </div>
                     </div>
@@ -311,7 +339,7 @@
                                         {{__('booking_section_col1_option2')}}
                                         @break
                                     @case(3)
-                                        {{__('booking_section_col1_option_3')}}
+                                        {{__('booking_section_col1_option3')}}
                                         @break
                                     @default
                                         {{__('undefined')}}
