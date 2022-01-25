@@ -37,6 +37,20 @@ class OrderPlaced extends Mailable
      */
     public function build()
     {
+        switch ($this->order->direction) {
+            case 1:
+                // Two ways
+                return $this->subject(trans('mail_order_subject'))->view('emails.order_placed_direction1');
+            case 2:
+                // From Airport
+                return $this->subject(trans('mail_order_subject'))->view('emails.order_placed_direction2');
+            case 3:
+                // From Hotel
+                return $this->subject(trans('mail_order_subject'))->view('emails.order_placed_direction3');
+            default:
+                // Some error must have been occurred.
+                break;
+        }
         return $this->subject(trans('mail_order_subject'))->view('emails.order_placed_direction1');
     }
 }
