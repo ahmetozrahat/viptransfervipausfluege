@@ -24,9 +24,13 @@ class CreateOrderController extends Controller
             // Send Mail and SMS to both user and admins.
             $order = TransferOrder::where('order_id', $request->post('order_id'))->get()->first();
 
-            Mail::to($request->post('email'))
-                ->locale($request->post('lang'))
-                ->send(new OrderPlaced($order));
+            if ($order != null) {
+                Mail::to($request->post('email'))
+                    ->locale($request->post('lang'))
+                    ->send(new OrderPlaced($order));
+            }else {
+                return false;
+            }
         }else {
             return false;
         }
