@@ -28,7 +28,7 @@
                     <input type="hidden" name="region" value="{{$transfer['region']}}">
                     <input type="hidden" name="vehicle" value="{{$transfer['vehicle']->id}}">
                     <input type="hidden" name="vehicleName" value="{{$transfer['vehicle']->name}}">
-                    <input type="hidden" name="price" value="{{$transfer['price']}}">
+                    <input type="hidden" name="price" value="{{$transfer['direction'] == 1 ? $transfer['price'] * 2 : $transfer['price']}}">
                     <div class="col-lg-12 vehicle-box">
                         <img class="vehicle-img" src="/img/vehicles/{{$transfer['vehicle']->image}}" alt="vehicle_photo">
                         <div class="vehicle-info-section">
@@ -56,7 +56,7 @@
                         </div>
                         <div class="vehicle-book">
                             <div class="vehicle-book-items">
-                                <div class="vehicle-transfer-price" price="{{$transfer['price']}}"></div>
+                                <div class="vehicle-transfer-price" price="{{$transfer['direction'] == 1 ? $transfer['price'] * 2 : $transfer['price']}}"></div>
                                 <button type="submit" class="btn btn-light vehicle-book-btn">{{__('transfer_book_now')}}</button>
                             </div>
                         </div>
