@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\CreateOrderController;
 use App\Http\Controllers\OrderDetailsController;
 use App\Http\Controllers\PhoneNumberController;
@@ -65,4 +66,6 @@ Route::group(['prefix' => 'api/v1'], function (){
     Route::post('create-order', [CreateOrderController::class, 'create']);
 
     Route::post('order-details', [OrderDetailsController::class, 'check'])->name('check-order-details');
+
+    Route::post('contact-form', [ContactFormController::class, 'index']);
 });

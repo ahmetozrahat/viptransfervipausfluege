@@ -1,34 +1,6 @@
 @extends('main')
 @section('content')
-    <!-- Toasts -->
-    <div id="success-toast-container" class="position-fixed top-0 end-0 p-3" style="z-index: -1">
-        <div id="success-toast" class="toast" auto role="alert" aria-live="assertive" aria-atomic="true">
-            <div class="toast-header">
-                <i class="fas fa-check-circle toast-icn-success"></i>
-                <strong id="success-toast-title" class="me-auto">Bilgi</strong>
-                <small id="success-toast-date">az önce</small>
-                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-            </div>
-            <div id="success-toast-body" class="toast-body">
-                İletişim talebiniz başarı ile alındı.
-            </div>
-        </div>
-    </div>
-
-    <div id="failure-toast-container" class="position-fixed top-0 end-0 p-3" style="z-index: -1">
-        <div id="failure-toast" class="toast" auto role="alert" aria-live="assertive" aria-atomic="true">
-            <div class="toast-header">
-                <i class="fas fa-times-circle toast-icn-failure"></i>
-                <strong id="failure-toast-title" class="me-auto">Hata</strong>
-                <small id="failure-toast-date">az önce</small>
-                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-            </div>
-            <div id="failure-toast-body" class="toast-body">
-                İletişim talebiniz alınırken bir sorun oluştu.
-            </div>
-        </div>
-    </div>
-
+    <meta name="_token" content="{{ csrf_token() }}" />
     <!-- Page Header Section -->
     <div class="page-header about-us">
         <div id="contact-page-title" class="page-title">
@@ -44,22 +16,22 @@
             <div class="col-md-6 contact-box">
                 <span class="contact-box-icon icon-company"></span>
                 <div id="contact-box-title1" class="contact-box-title">{!! __('contact_box_title1') !!}</div>
-                <div class="contact-box-desc">Vip Transfer Vip Ausfluege</div>
+                <div class="contact-box-desc">{{$contact->company_name}}</div>
             </div>
             <div class="col-md-6 contact-box">
                 <span class="contact-box-icon icon-email"></span>
                 <div id="contact-box-title2" class="contact-box-title">{!! __('contact_box_title2') !!}</div>
-                <div class="contact-box-desc">info@viptransfervipausfluege.com</div>
+                <div class="contact-box-desc">{{$contact->company_email}}</div>
             </div>
             <div class="col-md-6 contact-box">
                 <span class="contact-box-icon icon-address"></span>
                 <div id="contact-box-title3" class="contact-box-title">{!! __('contact_box_title3') !!}</div>
-                <div class="contact-box-desc">Kemerağzı Mah. Yaşar Sabutay Blv. Karnas iş Mrk. No: 14/13 Aksu/ Antalya</div>
+                <div class="contact-box-desc">{{$contact->company_address}}</div>
             </div>
             <div class="col-md-6 contact-box">
                 <span class="contact-box-icon icon-call-center"></span>
                 <div id="contact-box-title4" class="contact-box-title">{!! __('contact_box_title4') !!}</div>
-                <div class="contact-box-desc">+90 544 170 07 38</div>
+                <div class="contact-box-desc">{{$contact->company_phone}}</div>
             </div>
         </div>
     </div>
