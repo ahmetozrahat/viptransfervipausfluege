@@ -58,7 +58,7 @@ Route::group(['prefix' => 'api/v1'], function (){
     });
 
     Route::post('transfer-points', function () {
-       return TransferPoint::all();
+       return TransferPoint::orderBy('name', 'asc')->get();
     });
 
     Route::post('verify-phone', [PhoneNumberController::class, 'show']);
