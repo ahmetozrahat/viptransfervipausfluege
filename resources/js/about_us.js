@@ -1,13 +1,10 @@
+import Viewer from 'viewerjs';
+
 $(function () {
     $("#nav-link-home").attr('class', 'nav-link');
     $("#nav-link-aboutus").addClass('nav-link active');
 
-    Fancybox.bind("#aboutus_gallery a", {
-        groupAll: true, // Group all items
-        on: {
-            ready: (fancybox) => {
-                console.log(`fancybox #${fancybox.id} is ready!`);
-            }
-        }
-    });
+    // View a list of images.
+    // Note: All images within the container will be found by calling `element.querySelectorAll('img')`.
+    const gallery = new Viewer(document.getElementById('aboutus_gallery'));
 });
