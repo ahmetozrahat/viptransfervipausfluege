@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Mail\OrderPlaced;
+use App\Mail\OrderPlacedAdmin;
+use App\Models\AdminAccount;
 use App\Models\TransferOrder;
 use Illuminate\Http\Request;
 
@@ -25,9 +27,20 @@ class CreateOrderController extends Controller
             $order = TransferOrder::where('order_id', $request->post('order_id'))->get()->first();
 
             if ($order != null) {
+                // Mail to the user
                 Mail::to($request->post('email'))
                     ->locale($request->post('lang'))
                     ->send(new OrderPlaced($order));
+
+                // Mail to the admin
+                Mail::to('info@viptransfervipausfluege.com')
+                    ->cc(AdminAccount::where('is_active', true)->get()->all())
+                    ->locale($request->post('lang'))
+                    ->send(new OrderPlacedAdmin($order));
+
+                // SMS to the user
+
+                // SMS to the admin
             }else {
                 return false;
             }

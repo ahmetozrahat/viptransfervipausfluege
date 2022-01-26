@@ -36,4 +36,14 @@ class TransferOrder extends Model
     {
         return $this->hasOne(Terminal::class, 'id', 'return_terminal');
     }
+
+    public function getVehicle(): HasOne
+    {
+        return $this->hasOne(Vehicle::class, 'id', 'vehicle');
+    }
+
+    public function getTransferPoint(): HasOne
+    {
+        return $this->hasOne(TransferPoint::class, 'id', 'destination');
+    }
 }
