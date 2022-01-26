@@ -87,7 +87,7 @@
                         </div>
                         <div class="footer-contact-item">
                             <i class="fas fa-map-marker-alt footer-icn-small"></i>
-                            <a class="footer-list-item" href="#" target="_blank">{{$contact->company_address}}</a>
+                            <a class="footer-list-item" href="{{$contact->maps_url}}" target="_blank">{{$contact->company_address}}</a>
                         </div>
                     </div>
                 </div>
