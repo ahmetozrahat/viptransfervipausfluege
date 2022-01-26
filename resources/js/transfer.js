@@ -3,6 +3,13 @@
 /* Import Libraries */
 import 'js-loading-overlay';
 import cookies from 'js-cookie';
+import {Loader} from "@googlemaps/js-api-loader";
+
+/* Object Declaration */
+const loader = new Loader({
+    apiKey: "AIzaSyBDpCIRvXdsdbsRi1gkBnCNO_CRzEC9AZc",
+    version: "weekly"
+});
 
 const apiURL = 'https://api.exchangerate-api.com/v4/latest/EUR';
 
@@ -13,9 +20,7 @@ const vehicleTransferPrice = $(".vehicle-transfer-price");
 $(function () {
     retrieveCurrencyFromCookies();
 
-/*    initMap();
-
-    calcRoute();*/
+    initMap();
 });
 
 /*// Loading the google maps.
@@ -159,4 +164,16 @@ function showLoadingOverlay() {
  */
 function hideLoadingOverlay() {
     JsLoadingOverlay.hide();
+}
+
+/**
+ * Function for initializing the Google Maps object.
+ */
+function initMap() {
+    loader.load().then(() => {
+        let map = new google.maps.Map(document.getElementById("transfers-map"), {
+            center: { lat: -34.397, lng: 150.644 },
+            zoom: 8,
+        });
+    });
 }
