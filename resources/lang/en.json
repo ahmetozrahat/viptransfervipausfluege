@@ -174,5 +174,6 @@
     "mail_return_terminal": "Terminal",
     "mail_return_transfer_notes": "Notes",
     "mail_arrival_info": "Arrival Information",
-    "mail_return_info": "Return Information"
+    "mail_return_info": "Return Information",
+    "order_confirmation_sms_user": "Hi :name,\n\nYour order :order_id has reached us. Other details about the order has been sent to your email. Have a nice day."
 }

@@ -39,8 +39,19 @@ class CreateOrderController extends Controller
                     ->send(new OrderPlacedAdmin($order));
 
                 // SMS to the user
+                $smsUser = __(
+                    'order_confirmation_sms_user',
+                    [
+                        'name' => $request->post('name'),
+                        'order_id' => $request->post('order_id')
+                    ],
+                    $request->post('lang')
+                );
+                SMSController::sendMessage($request->post('phone'), $smsUser);
 
                 // SMS to the admin
+/*                $smsUser = __('order_confirmation_sms_admin', [], $request->post('lang'));
+                SMSController::sendMessage('+905441700738', $smsUser);*/
             }else {
                 return false;
             }

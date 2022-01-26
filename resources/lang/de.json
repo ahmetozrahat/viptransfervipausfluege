@@ -174,5 +174,6 @@
     "mail_return_terminal": "Terminal",
     "mail_return_transfer_notes": "Anmerkungen",
     "mail_arrival_info": "Ankunfts Details",
-    "mail_return_info": "Abreise Details"
+    "mail_return_info": "Abreise Details",
+    "order_confirmation_sms_user": "Hallo :name,\n\nIhre Bestellung mit der Nummer :order_id hat uns erreicht. Weitere Einzelheiten der Bestellung wurden an Ihre E-Mail-Adresse gesendet. Wir wünschen Ihnen gesunde Tage."
 }

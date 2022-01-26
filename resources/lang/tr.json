@@ -175,5 +175,6 @@
     "mail_return_terminal": "Terminal",
     "mail_return_transfer_notes": "Notlar",
     "mail_arrival_info": "Geliş Bilgileriniz",
-    "mail_return_info": "Dönüş Bilgileriniz"
+    "mail_return_info": "Dönüş Bilgileriniz",
+    "order_confirmation_sms_user": "Merhaba :name,\n\n:order_id nolu siparişiniz bize ulaşmıştır. Siparişe ait diğer detaylar email adresinize gönderilmiştir. Sağlıklı günler dileriz."
 }
