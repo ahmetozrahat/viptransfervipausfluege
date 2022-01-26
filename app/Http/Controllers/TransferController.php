@@ -29,7 +29,7 @@ class TransferController extends Controller
         $region = optional(TransferPoint::where('id', $request->post('booking-transfer-point'))
             ->get()
             ->first())
-            ->id;
+            ->region;
 
         $transfer = optional(Transfer::where('airport', $request->post('booking-airport'))
             ->where('region', $region)
