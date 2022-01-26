@@ -67,12 +67,15 @@ function sendContactForm(contactData) {
         data: contactData,
         success: function (data) {
             hideLoadingOverlay();
-            console.log(data);
+            if (data)
+                toastr.success('İletişim talebiniz başarıyla alındı.');
+            else
+                console.log(data);
         },
         error: function (error) {
             hideLoadingOverlay();
             console.log(error);
-            toastr.warning('İletişim talebiniz alınırken bir sorun oluştu. Lütfen daha sonra tekrar deneyiniz.');
+            toastr.error('İletişim talebiniz alınırken bir sorun oluştu. Lütfen daha sonra tekrar deneyiniz.');
         }
     });
 }
