@@ -144,7 +144,7 @@
     </div>
     <br><br>
     <div class="company-info-address">
-        Altıntaş Mahallesi, Florya Sokak, Antalya/Aksu 07112
+        Kemerağzı Mah. Yaşar Sabutay Blv. Karnas iş Mrk. No: 14/13 Aksu/ Antalya
     </div>
 </div>
 
