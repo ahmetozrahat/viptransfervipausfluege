@@ -58,12 +58,6 @@
 </head>
 
 <body>
-<!-- Page Title -->
-<h3 class="title">Vip Transfer Vip Ausflüge</h3>
-<h3>Online Transfer Order</h3>
-
-<br><br>
-<h3 class="title">ÜBERTRAGUNGSDETAILS</h3>
 
 @yield('content')
 
