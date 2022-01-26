@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\Contact;
+use App\Models\AdminAccount;
 use App\Models\Ticket;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class ContactFormController extends Controller
 {
@@ -24,6 +27,10 @@ class ContactFormController extends Controller
 
         $result = $ticket->save();
         if ($result) {
+            // Send ticket as mail to the system admins.
+            Mail::to('info@viptransfervipausfluege.com')
+                ->cc(AdminAccount::where('is_active', true)->get()->all())
+                ->send(new Contact($ticket));
             return true;
         }
         return false;
