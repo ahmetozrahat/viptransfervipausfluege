@@ -12,18 +12,6 @@ use Illuminate\Http\Request;
 class TransferController extends Controller
 {
     public function index(Request $request) {
-        $validatedData = $request->validate([
-            'booking-transfer-direction' => ['required', 'integer', 'min:1', 'max:3'],
-            'airport-name' => ['required', 'string', 'min:0', 'max:1024'],
-            'booking-airport' => ['required', 'integer', 'min:1', 'max:255'],
-            'transfer-point-name' => ['required', 'string', 'min:0', 'max:1024'],
-            'booking-transfer-point' => ['required', 'integer', 'min:1', 'max:255'],
-            'passenger-adult-quantity' => ['required', 'integer', 'min:0', 'max:16'],
-            'passenger-kid-quantity' => ['required', 'integer', 'min:0', 'max:16'],
-            'passenger-baby-quantity' => ['required', 'integer', 'min:0', 'max:16'],
-            'passenger-baby-seat' => ['required', 'integer', 'min:0', 'max:10'],
-        ]);
-
         $formData = $request->post();
 
         $region = optional(TransferPoint::where('id', $request->post('booking-transfer-point'))
