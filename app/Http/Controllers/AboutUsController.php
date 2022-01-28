@@ -11,7 +11,7 @@ class AboutUsController extends Controller
     public function index()
     {
         $contact = ContactInfo::all()->first();
-        $gallery = Gallery::all();
+        $gallery = Gallery::orderBy('id', 'desc')->get();
 
         return view('pages.aboutus', compact(['gallery', 'contact']));
     }
