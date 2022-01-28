@@ -1,4 +1,7 @@
 @extends('main')
+@section('title')
+    {{__('tab_title_aboutus', ['company' => 'VipTransferVipAusfluege'])}}
+@endsection
 @section('content')
     <!-- Page Header Section -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.10.2/viewer.min.css" integrity="sha512-r+5gXtPk5M2lBWiI+/ITUncUNNO15gvjjVNVadv9qSd3/dsFZdpYuVu4O2yELRwSZcxlsPKOrMaC7Ug3+rbOXw==" crossorigin="anonymous" referrerpolicy="no-referrer" />

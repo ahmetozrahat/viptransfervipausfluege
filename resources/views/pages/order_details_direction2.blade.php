@@ -1,4 +1,7 @@
 @extends('main')
+@section('title')
+    {{__('tab_title_order_details', ['company' => 'VipTransferVipAusfluege'])}}
+@endsection
 @section('content')
     <!-- Page Header Section -->
     <div class="page-header about-us">

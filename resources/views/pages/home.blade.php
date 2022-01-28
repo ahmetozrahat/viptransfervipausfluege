@@ -1,4 +1,7 @@
 @extends('main')
+@section('title')
+    {{__('tab_title_home', ['company' => 'VipTransferVipAusfluege'])}}
+@endsection
 @section('content')
     <meta name="_token" content="{{ csrf_token() }}" />
     <meta name="airport-translation" content="{{ __('booking_section_col2') }}" />

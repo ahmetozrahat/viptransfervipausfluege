@@ -1,4 +1,7 @@
 @extends('main')
+@section('title')
+    {{__('tab_title_transfer', ['company' => 'VipTransferVipAusfluege'])}}
+@endsection
 @section('content')
     <meta name="person_capacity" content="{{__('')}}">
     <!-- Page Header Section -->

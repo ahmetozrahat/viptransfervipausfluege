@@ -1,4 +1,7 @@
 @extends('main')
+@section('title')
+    {{__('tab_title_transfer_order', ['company' => 'VipTransferVipAusfluege'])}}
+@endsection
 @section('content')
     <meta name="_token" content="{{ csrf_token() }}" />
     <!-- Page Header Section -->
