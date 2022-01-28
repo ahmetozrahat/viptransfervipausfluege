@@ -22,12 +22,12 @@
         </tr>
         <tr>
             <td class="details-row-title">Original Preis</td>
-            <td class="details-row-value">{{$order->original_price . ' €'}}</td>
+            <td class="details-row-value">{{number_format($order->original_price, 2) . ' €'}}</td>
         </tr>
         <tr>
             <td class="details-row-title">Währungspreis</td>
             <td class="details-row-value">
-                {{$order->converted_price . ' '}}
+                {{number_format($order->converted_price, 2) . ' '}}
                 @switch($order->currency)
                     @case('tl')
                     ₺

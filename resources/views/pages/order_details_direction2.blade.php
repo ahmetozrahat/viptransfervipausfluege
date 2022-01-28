@@ -50,7 +50,7 @@
                 <tr class="order-details-row">
                     <td id="order-details-transfer-price" class="order-details-left-col">{{__('mail_transfer_price')}}</td>
                     <td id="order-details-transfer-price-value" class="order-details-right-col">
-                        {{$order->converted_price . ' '}}
+                        {{number_format($order->converted_price, 2) . ' '}}
                         @switch($order->currency)
                             @case('tl')
                             ₺
