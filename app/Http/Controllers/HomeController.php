@@ -12,7 +12,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $mainSlider = MainSlider::all();
+        $mainSlider = MainSlider::where('is_active', 1)->get();
         $userReviews = UserReview::all();
         $contact = ContactInfo::all()->first();
 
