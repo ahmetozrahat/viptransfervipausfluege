@@ -29,7 +29,7 @@ use App\Http\Controllers\ContactController;
 Route::redirect('/', '/de');
 
 Route::group(['prefix' => '{language}'], function () {
-    Route::get('/', [HomeController::class, 'index'])->header('Cache-Control', 'no-store, no-cache, must-revalidate, post-check=0, pre-check=0, max-age=0')->name('home');
+    Route::get('/', [HomeController::class, 'index'])->name('home');
 
     Route::get('/aboutus', [AboutUsController::class, 'index'])->name('aboutus');
 
