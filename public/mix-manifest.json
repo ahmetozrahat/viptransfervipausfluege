@@ -1,13 +1,13 @@
 {
-    "/js/app.js": "/js/app.js",
-    "/js/about_us.js": "/js/about_us.js",
-    "/js/contact.js": "/js/contact.js",
-    "/js/my_order.js": "/js/my_order.js",
-    "/js/bootstrap-input-spinner.js": "/js/bootstrap-input-spinner.js",
-    "/js/transfer.js": "/js/transfer.js",
-    "/js/transfer_order.js": "/js/transfer_order.js",
-    "/js/currency.js": "/js/currency.js",
-    "/js/jquery.flipster.min.js": "/js/jquery.flipster.min.js",
-    "/css/app.css": "/css/app.css",
-    "/css/jquery.flipster.min.css": "/css/jquery.flipster.min.css"
+    "/js/app.js": "/js/app.js?id=65a5dc6757ca0d7d5a80",
+    "/js/about_us.js": "/js/about_us.js?id=536190c558134fa2f601",
+    "/js/contact.js": "/js/contact.js?id=ffa491094f6afbfce9ba",
+    "/js/my_order.js": "/js/my_order.js?id=fe4f6f4d561d76aee8e6",
+    "/js/bootstrap-input-spinner.js": "/js/bootstrap-input-spinner.js?id=d2133db1cbcb5514d51b",
+    "/js/transfer.js": "/js/transfer.js?id=850e48e24ac7e03a6377",
+    "/js/transfer_order.js": "/js/transfer_order.js?id=6dcf79cafbd4d90bc636",
+    "/js/currency.js": "/js/currency.js?id=f8c3c852a3d3a1e01175",
+    "/js/jquery.flipster.min.js": "/js/jquery.flipster.min.js?id=f4535c854b6411fdda39",
+    "/css/app.css": "/css/app.css?id=b5f124585566b0b53fe8",
+    "/css/jquery.flipster.min.css": "/css/jquery.flipster.min.css?id=ba234216640e80293f0f"
 }

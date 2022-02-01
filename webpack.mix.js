@@ -25,4 +25,4 @@ mix.js('resources/js/app.js', 'public/js')
     ])
     .postCss('resources/css/jquery.flipster.min.css', 'public/css', [
 
-    ])
+    ]).version();
