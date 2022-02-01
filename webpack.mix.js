@@ -19,6 +19,10 @@ mix.js('resources/js/app.js', 'public/js')
     .js('resources/js/transfer.js', 'public/js')
     .js('resources/js/transfer_order.js', 'public/js')
     .js('resources/js/currency.js', 'public/js')
+    .js('resources/js/jquery.flipster.min.js', 'public/js')
     .postCss('resources/css/app.css', 'public/css', [
         //
+    ])
+    .postCss('resources/css/jquery.flipster.min.css', 'public/css', [
+
     ])

@@ -9,26 +9,15 @@
     <!-- Carousel Section -->
     <div class="carousel-container">
         <h1 id="carousel-title" class="heading-text">{!! __('carousel_section_title') !!}</h1>
-
-        <div class="container-fluid">
-            <div id="carouselExampleControls" class="carousel slide carousel-customers" data-bs-ride="carousel">
-                <div class="carousel-inner">
+        <div class="carousel-outer">
+            <div class="carousel-vehicle">
+                <ul>
                     @foreach ($mainSlider as $row)
-                        <div class="carousel-item @if ($loop->first) active @endif">
-                            <img class="d-block w-100" src="{{ $row->image_url }}" alt=" Slide {{ $loop->index }}">
-                        </div>
+                        <li>
+                            <img src="{{ $row->image_url }}" alt=" Slide {{ $loop->index }}">
+                        </li>
                     @endforeach
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+                </ul>
             </div>
         </div>
     </div>
@@ -202,4 +191,5 @@
 @section('scripts')
     <script src="{{ mix('js/bootstrap-input-spinner.js') }}"></script>
     <script src="{{ mix('js/app.js') }}"></script>
+    <script src="{{mix('js/jquery.flipster.min.js')}}"></script>
 @endsection

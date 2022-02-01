@@ -7,5 +7,7 @@
     "/js/transfer.js": "/js/transfer.js",
     "/js/transfer_order.js": "/js/transfer_order.js",
     "/js/currency.js": "/js/currency.js",
-    "/css/app.css": "/css/app.css"
+    "/js/jquery.flipster.min.js": "/js/jquery.flipster.min.js",
+    "/css/app.css": "/css/app.css",
+    "/css/jquery.flipster.min.css": "/css/jquery.flipster.min.css"
 }

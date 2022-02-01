@@ -47,6 +47,8 @@ let transferPointTranslation = $('meta[name="transfer-point-translation"]').attr
 $(function () {
     initializeView();
 
+    setupCarousel();
+
     handleClickListeners();
 });
 
@@ -64,6 +66,17 @@ function initializeView() {
     airportCol3.hide();
 
     passengerDropdown.css("display", "none");
+}
+
+function setupCarousel() {
+    $('.carousel-vehicle').flipster({
+        itemContainer: 'ul',
+        itemSelector: 'li',
+        style: 'carousel',
+        spacing: -0.3,
+        start: 'center',
+        loop: true
+    });
 }
 
 /**
