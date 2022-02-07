@@ -78,7 +78,7 @@ function showLoadingOverlay() {
         "overlayBackgroundColor": "#666666",
         "overlayOpacity": "0.8",
         "spinnerIcon": "ball-spin-clockwise",
-        "spinnerColor": "#78C4D4",
+        "spinnerColor": "#E1AF31",
         "spinnerSize": "3x",
         "overlayIDName": "asd",
         "spinnerIDName": "spinner",
