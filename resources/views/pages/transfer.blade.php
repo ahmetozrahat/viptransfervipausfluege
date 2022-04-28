@@ -47,8 +47,7 @@
                                     </tr>
                                     <tr>
                                         <td class="vehicle-info-row-2"><i class="fas fa-suitcase vehicle-info-icon"></i>{{__('transfer_luggage_capacity')}}</td>
-                                        <td class="vehicle-info-baggage" id="vehicle-info-baggage">: {{ trans_choice('baggage_count', $transfer['vehicle']->baggage_quantity, ['count' => $transfer['vehicle']->baggage_quantity])  }}</td>
-                                    </tr>
+                                        <td class="vehicle-info-baggage" id="vehicle-info-baggage">: {{ trans_choice('baggage_count', (($transfer['adultQuantity'] + $transfer['kidQuantity'] + $transfer['babyQuantity']) * 2), ['count' => (($transfer['adultQuantity'] + $transfer['kidQuantity'] + $transfer['babyQuantity']) * 2)])  }}</td>                                    </tr>
                                     <tr>
                                         <td class="vehicle-info-row-3"><i class="fas fa-stopwatch vehicle-info-icon"></i>{{__('transfer_duration')}}</td>
                                         <td class="vehicle-info-duration" id="vehicle-info-duration">: {{__('undefined')}}</td>
