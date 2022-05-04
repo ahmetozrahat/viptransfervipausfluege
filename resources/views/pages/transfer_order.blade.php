@@ -282,17 +282,17 @@
                             <div class="modal-dialog modal-xl">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Transfer Sözleşmesi</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">{!! __('transfer_order_agreement_title') !!}</h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
                                         <div class="icerik" align="justify">
-                                            {{__('transfer_order_agreement')}}
+                                            {!! __('transfer_order_agreement') !!}
                                         </div>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
-                                        <button id="agreement-accept" type="button" class="btn btn-primary">Kabul Ediyorum</button>
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{!! __('transfer_order_agreement_negative_button') !!}</button>
+                                        <button id="agreement-accept" type="button" class="btn btn-primary">{!! __('transfer_order_agreement_positive_button') !!}</button>
                                     </div>
                                 </div>
                             </div>
