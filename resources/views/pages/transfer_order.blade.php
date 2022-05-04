@@ -287,31 +287,7 @@
                                     </div>
                                     <div class="modal-body">
                                         <div class="icerik" align="justify">
-                                            <h3>1- Taraflar</h3>
-                                            <p>Web Sitesi :&nbsp;www.viptransfervipausfluege.com</p>
-                                            <p>Online rezervasyon tabanlı hizmet veren web sitesi ve firma “Hizmet Sağlayıcı” olarak anılacaktır.&nbsp; Online rezervasyonda adı-soyadı geçen kişi, aynı rezervasyon içinde temsil ettiği diğer yolcularla beraber, “Müşteri” olarak anılacaktır.</p>
-                                            <h3>2- Konu</h3>
-                                            <p>İş bu sözleşme “Hizmet Sağlayıcı” &nbsp;ile “Müşteri” arasında yapılmıştır. “Hizmet Sağlayıcı”nın verdiği hizmet, rezervasyon kaydı yapılarak alınmış olup, hizmet içeriliği web sitesi içindeki ilgili sayfalarda detaylı anlatılmıştır.</p>
-                                            <h3>3- Sözleşmenin Süresi</h3>
-                                            <p>İş bu sözleşme; söz konusu rezervasyonun “Hizmet Sağlayıcı” tarafından onaylandığı andan itibaren, rezervasyonda “Müşteri” tarafından belirtilen hizmet tarihi ve saatinde transferin hizmetinin gerçekleştirilmesini takiben sona erer.</p>
-                                            <h3>4- Ödeme ve Fatura Bilgileri</h3>
-                                            <p>Rezervasyon esnasında araçta nakit ödeme seçeneği seçilmiş ise “Müşteri” hizmet bedelini hizmeti aldığı esnada ödemekle yükümlüdür. Fatura talebinin rezervasyon formundaki Not bölümünde belirtilmesi halinde fatura araçta teslim edilecektir.</p>
-                                            <h3>5- İptal, Değişiklik ve İade Prosedürü</h3>
-                                            <ul>
-                                                <li>“Müşteri”, hizmetin başlamasına 24 saatten fazla süre varken hizmeti iptal etmek isterse ödediği hizmet bedelinin tamamı kendisine iade edilir.</li>
-                                                <li>“Müşteri”, hizmetin başlamasına 12-24 saat kala hizmeti iptal etmek isterse hizmet bedelinin&nbsp;<strong>%75’</strong>i iade edilir.</li>
-                                                <li>“Müşteri”, hizmetin başlamasına 1-12 saat kala hizmeti iptal etmek isterse hizmet bedelinin&nbsp;<strong>%50</strong>’si iade edilir.</li>
-                                                <li>“Müşteri”, hizmet başlamasına 1 saat kala yaptığı iptallerde veya hizmeti kullanmadığı durumlarda iade yapılmaz. Ancak bir sonraki transfer talebinde tek yön için&nbsp;<strong>%50 indirim</strong>&nbsp;uygulanır. (İndirim uygulanabilmesi için “Müşteri”nin yeni transfer siparişinin Not bölümünde geçmiş rezervasyonun iptali ile ilgili bilgi vermesi gerekmektedir.)</li>
-                                            </ul>
-                                            <h3>6- Genel hükümler</h3>
-                                            <p>Hizmet Sağlayıcı, hizmetin verilmesine engel teşkil edecek durumlarda (Trafik kazası, trafık sıkışıklığı, mekanik arıza, hava muhalefeti, güvenlik önlemleri vb.) transferin gerçekleşemeyeceği anlaşıldığı anda farklı bir araç yönlendirmeye çalışacak ve “Müşteri”ye durum bilgisi verilecektir. Eğer araç temini yapılamazsa alınan hizmet bedelinin tamamı iade edilecek ve bir sonraki transfer siparişinin tek yön fiyatına&nbsp;<strong>%50 indirim</strong>&nbsp;uygulanacaktır. Transfer hizmeti alan tüm yolcular sigortalanmış olup, olası bir kaza ve yaralanma durumunda sağlık masrafları sigorta poliçesinin sağladığı limitler kapsamında karşılanmaktadır.</p>
-                                            <h3>7- Yürürlük</h3>
-                                            <p>İş bu sözleşme 7 ana maddeden oluşmakta olup, gerektiği takdirde 2 nüsha halinde tanzim edilerek taraflarca imzalanacak olup, sözleşmeden kaynaklanan anlaşmazlıklarda, 4925 Sayılı Karayolu Taşıma Kanununu maddeleri uygulanır. Bu sözleşmeden doğacak olan uyuşmazlık konusunda ..... Mahkemesi ve icra daireleri yetkilidir. Sözleşmeyi kendim ve/veya rezervasyon formunda belirtmiş olduğum isimleri yazılı kişiler adına okuyup, kabul ettiğimi beyan ettim. Bu beyanım; rezervasyon işlemini kendim yerine bir başkasının yürütmüş ve/veya kabul etmiş olması halinde dahi geçerlidir. “Müşteri” olarak adımıza düzenlenmiş olan Hizmet Sözleşmesi ve “Şartlar ve Koşullar” sayfalarında belirtilen hükümlerinin tamamını, göndermiş olduğum rezervasyon formunda yer alan bilgilerimin doğruluğunun sorumluluğunu, 4925 Sayılı Karayolu Taşıma Kanununu ve Taşımacının web sitesindeki bilgileri okuyup, anlayıp kabul ettiğimi beyan ederim.</p>
-                                            <div class="temizle"></div>
-                                            <ul id="fotogaleri">
-
-                                            </ul>
-                                            <div class="temizle"></div>
+                                            {{__('transfer_order_agreement')}}
                                         </div>
                                     </div>
                                     <div class="modal-footer">
