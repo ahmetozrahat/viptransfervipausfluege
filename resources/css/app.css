@@ -516,6 +516,16 @@ body {
     transition: 0.5s;
   }
 
+  .footer-tursab-logo {
+      margin: auto;
+      display: flex;
+      justify-content: center;
+  }
+
+  .footer-acente-text {
+      margin-top: 15px;;
+  }
+
   .toast {
     font-family: "Source Sans Pro";
     text-align: left;
