@@ -517,9 +517,9 @@ body {
   }
 
   .footer-tursab-logo {
-      margin: auto;
-      display: flex;
-      justify-content: center;
+      max-width: 100%;
+      margin-bottom: 50px;
+      display: block;
   }
 
   .footer-acente-text {
