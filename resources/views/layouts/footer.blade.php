@@ -6,8 +6,9 @@
                 <div id="footer-section-text1" class="footer-section desc footer-block">
                     {{ __('footer_section_text1') }}
                 </div>
-                <div><img class="footer-tursab-logo" src="{{'img/tursab_logo.svg'}}" width="100" height="100" alt="tursab_logo"></div>
-                <div class="footer-acente-text">MARTİNA 07 TURİZM<br>ACENTE BELGE NO: <strong>13995</strong></div>
+                <a href="https://www.tursab.org.tr/tr/ddsv" target="_blank">
+                    <img class="footer-tursab-logo" src="{{asset('img/tursab-dds-13995.png')}}">
+                </a>
                 <a class="fab fa-facebook-f footer-icn" href="{{$contact->facebook}}" target="_blank"></a>
                 <a class="fab fa-instagram footer-icn" href="{{$contact->instagram}}" target="_blank"></a>
             </div>
