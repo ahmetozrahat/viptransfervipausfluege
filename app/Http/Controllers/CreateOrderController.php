@@ -47,7 +47,7 @@ class CreateOrderController extends Controller
                     ],
                     $request->post('lang')
                 );
-                SMSController::sendMessage($request->post('phone'), $smsUser);
+                // SMSController::sendMessage($request->post('phone'), $smsUser);
 
                 // SMS to the admin
 /*                $smsUser = __('order_confirmation_sms_admin', [], $request->post('lang'));
