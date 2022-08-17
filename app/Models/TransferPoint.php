@@ -5,10 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Notifications\Notifiable;
 
 class TransferPoint extends Model
 {
-    use HasFactory;
+    use HasFactory, Notifiable;
+
+    protected $fillable = [
+        'name', 'region'
+    ];
 
     /**
      * The table associated with the model.

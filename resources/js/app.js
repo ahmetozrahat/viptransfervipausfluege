@@ -310,11 +310,11 @@ function loadTransferPoints(transferPoints) {
         let transferPoint = transferPoints[i];
 
         transferPointCol2.append(
-            '<option value=' + transferPoint.id + '>' + transferPoint.name + '</option>'
+            '<option value=' + transferPoint.id + '>' + transferPoint.region_name + ' - ' + transferPoint.name + '</option>'
         );
 
         transferPointCol3.append(
-            '<option value=' + transferPoint.id + '>' + transferPoint.name + '</option>'
+            '<option value=' + transferPoint.id + '>' + transferPoint.region_name + ' - ' + transferPoint.name + '</option>'
         );
     }
 }
