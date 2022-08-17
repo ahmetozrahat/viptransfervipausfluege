@@ -304,7 +304,7 @@ Route::middleware('auth:sanctum')->group(function () {
 
         return Http::contentType('application/json')
             ->acceptJson()
-            ->withToken('N2RjNTM1ZDMtZmRkZC00MDBkLWE2MWYtZTMzZDdjNjY1ZWFm')
+            ->withToken(env('ONESIGNAL_REST_API_KEY', ''))
             ->post('https://onesignal.com/api/v1/notifications', $data);
     });
 });
